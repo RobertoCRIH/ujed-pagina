@@ -1,0 +1,35 @@
+$mainRed : #B31312;
+
+.roundtable{
+    
+    width: 100%;
+    border: 1px solid $mainRed;
+    border-radius: 25px;
+    overflow: hidden;
+
+    & table{
+        border-collapse: collapse;
+        width: 100%;
+
+        td{
+            padding: 8px 10px;
+            border-top: 1px solid $mainRed;
+            text-align: center;
+        }
+
+        th{
+            padding: 15px;
+            background-color: $mainRed;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .roundtable{
+        border-radius: 0;
+        overflow: auto;
+
+    }
+}

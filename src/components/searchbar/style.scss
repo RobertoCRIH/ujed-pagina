@@ -1,0 +1,24 @@
+.searchbar{
+    display: flex;
+    justify-content: center;
+
+    &__content{
+        
+        padding: 8px 20px;
+        align-items: center;
+        border: 1px solid grey;
+        border-radius: 20px;
+
+        & input{
+            margin-left: 10px;
+            width: 30vw;
+            min-width: 200px;
+            background-color: none;
+            border: none;
+            &:focus{
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
