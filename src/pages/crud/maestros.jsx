@@ -1,13 +1,22 @@
 import RoundTable from "../../components/roundTable/roundTable";
 import Searchbar from "../../components/searchbar/searchbar";
 
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import { FaUserTie } from "react-icons/fa";
+
+
+import maestros from "../../data/maestrosTestData";
+import { useState } from "react";
 function Maestros() {
+
+    const [filter,setFilter] = useState("")
     return(
         <>
-            <Searchbar/>
-        
+            <Searchbar changeState={setFilter}/>
+
             <div className="title">
-                Maestros
+                <FaUserTie style={{marginRight:"10px"}}/> Maestros
             </div>
 
             <RoundTable>
@@ -18,24 +27,38 @@ function Maestros() {
                     <th>Especialidad</th>
                     <th>Horario</th>
                     <th>Turno</th>
-                </tr>
-                <tr>
-                    <td>Juan Alberto Contreras Chavez</td>
-                    <td>juan.alberto@gmail.com</td>
-                    <td>6182209945</td>
-                    <td>Biologo Marino, Astronauta, Pescador, Amante, Amigo</td>
-                    <td>Horario</td>
-                    <td>Turno</td>
+                    <th>Acciones</th>
                 </tr>
 
-                <tr>
-                    <td>Juan Alberto Contreras Chavez</td>
-                    <td>juan.alberto@gmail.com</td>
-                    <td>6182209945</td>
-                    <td>Biologo Marino</td>
-                    <td>Horario</td>
-                    <td>Turno</td>
-                </tr>
+                {maestros.map((e)=>{
+
+                    if(e.nombre.toLowerCase().includes(filter.toLowerCase())){
+                        return(
+                            <tr>
+                                <td> <b> {e.nombre}</b></td>
+                                <td>{e.correo}</td>
+                                <td>{e.tel}</td>
+                                <td>{e.clases.map((clase)=>{
+                                    return(
+                                        <>
+                                        <p>{clase}</p>
+                                        
+                                        </>
+                                    )
+                                })}</td>
+                                <td><a href="http://" target="_blank" rel="noopener noreferrer">Horario</a></td>
+                                <td>{e.turno}</td>
+                                <td>
+                                    <button><FaEdit/></button>
+                                    <button><MdDelete/></button>
+                                </td>
+                            </tr>
+                        )
+                    }
+                    
+                })}
+
+                
             </RoundTable>
 
 

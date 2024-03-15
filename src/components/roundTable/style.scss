@@ -10,11 +10,22 @@ $mainRed : #B31312;
     & table{
         border-collapse: collapse;
         width: 100%;
-
+        table-layout: fixed;
         td{
             padding: 8px 10px;
             border-top: 1px solid $mainRed;
             text-align: center;
+                    
+            & button{
+                background-color: transparent;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover{
+                    color: $mainRed;
+                }
+            }
         }
 
         th{
