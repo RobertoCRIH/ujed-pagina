@@ -1,4 +1,5 @@
 import Alumnos from "./alumnos";
+import Carreras from "./carreras";
 import Maestros from "./maestros";
 
 function CrudBody({state,stateList}) {
@@ -14,6 +15,12 @@ function CrudBody({state,stateList}) {
             case stateList[1]:
                 return(
                     <Alumnos/>
+                )
+            break;
+
+            case stateList[2]:
+                return(
+                    <Carreras/>
                 )
             break;
         

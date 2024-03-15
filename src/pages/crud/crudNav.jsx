@@ -5,18 +5,20 @@ import { FaUserTie } from "react-icons/fa";
 import { FaUserGraduate } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { FaArrowLeft } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
 
 
 
 
 function CrudNav({changeFunction}) {
-    const [visible,setVisible] = useState(false)
+    const [visible,setVisible] = useState(true)
     if(visible){
         return(
             <>
                 
                 <div className="crud__nav">
-                    <div className="header">
+                    
+                    <div className="header" >
                         <button onClick={(e)=>setVisible(false)}><FaArrowLeft/></button>
                     </div>
                     
@@ -28,7 +30,7 @@ function CrudNav({changeFunction}) {
 
                         <button onClick={(e)=> {changeFunction("Maestros")}}> <FaUserTie style={{marginRight:"20px"}}/> Maestros</button>
                         <button onClick={(e)=> {changeFunction("Alumnos")}}> <FaUserGraduate style={{marginRight:"20px"}}/> Alumnos</button>
-
+                        <button onClick={(e)=> {changeFunction("Carreras")}}> <FaBook style={{marginRight:"20px"}}/> Carreras</button>
                     </div>
                     
                 </div>

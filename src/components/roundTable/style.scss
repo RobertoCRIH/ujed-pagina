@@ -1,16 +1,15 @@
-$mainRed : #B31312;
+$mainRed : rgb(187, 187, 187);
 
 .roundtable{
     
     width: 100%;
     border: 1px solid $mainRed;
-    border-radius: 25px;
+    border-radius: 15px;
     overflow: hidden;
 
     & table{
         border-collapse: collapse;
         width: 100%;
-        table-layout: fixed;
         td{
             padding: 8px 10px;
             border-top: 1px solid $mainRed;
@@ -29,9 +28,9 @@ $mainRed : #B31312;
         }
 
         th{
+            font-size: 18px;
             padding: 15px;
-            background-color: $mainRed;
-            color: white;
+            color: black;
             font-weight: bold;
         }
     }
@@ -42,5 +41,8 @@ $mainRed : #B31312;
         border-radius: 0;
         overflow: auto;
 
+        & table{
+            table-layout: auto;
+        }
     }
 }
