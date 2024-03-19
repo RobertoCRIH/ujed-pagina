@@ -172,6 +172,61 @@ $mainRed : #B31312;
     }
 }
 
+.noticias{
+    display: flex;
+    gap: 20px;
+    
+    flex-wrap: wrap;
+
+    & .noticia{
+        width: 300px;
+        border: 1px solid grey;
+        
+
+        & img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        &__title{
+            font-weight: bold;
+            padding: 10px 10px;
+
+        }
+
+        &__date{
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: gray;
+        }
+
+        &__buttons{
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            & button{
+                padding: 5px 10px;
+                border-radius: 10px;
+                border: 2px solid black;
+                cursor: pointer;
+            }
+
+            & .borrar{
+                border-color: #B31312;
+                color: #B31312;
+            }
+
+            & .editar{
+                border-color: green;
+                color: green;
+            }
+        }
+    }
+}
+
 @media (max-width: 600px) {
     .crud{
         &__nav{

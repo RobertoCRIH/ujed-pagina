@@ -6,7 +6,8 @@ import "./style.scss";
 const crudStates= [
     "Maestros",
     "Alumnos",
-    "Carreras"
+    "Carreras",
+    "Noticias"
 ]
 
 

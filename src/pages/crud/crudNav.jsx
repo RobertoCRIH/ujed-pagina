@@ -6,6 +6,8 @@ import { FaUserGraduate } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
+import { FaNewspaper } from "react-icons/fa6";
+
 
 
 
@@ -31,6 +33,7 @@ function CrudNav({changeFunction}) {
                         <button onClick={(e)=> {changeFunction("Maestros")}}> <FaUserTie style={{marginRight:"20px"}}/> Maestros</button>
                         <button onClick={(e)=> {changeFunction("Alumnos")}}> <FaUserGraduate style={{marginRight:"20px"}}/> Alumnos</button>
                         <button onClick={(e)=> {changeFunction("Carreras")}}> <FaBook style={{marginRight:"20px"}}/> Carreras</button>
+                        <button onClick={(e)=> {changeFunction("Noticias")}}> <FaNewspaper style={{marginRight:"20px"}}/> Noticias</button>
                     </div>
                     
                 </div>

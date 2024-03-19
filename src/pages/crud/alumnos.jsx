@@ -9,6 +9,7 @@ import AddButton from "../../components/addButton";
 
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
+import { useState } from "react";
 
 const data = {
     labels:['Qumicos','Lic. en Medicina','Matematicas','Dentista'],
@@ -20,9 +21,21 @@ const data = {
     ]
 };
 
-function Alumnos() {
-    
 
+
+function TestFunc(test) {
+    if(test){
+        return(
+            <h1>This is a test</h1>
+        )
+    }
+}
+
+function Alumnos() {
+    const [test,setTest] = useState(true)
+    function Log() {
+        console.log("Hollla")
+    }
     return(
         <>
             <br />
@@ -31,13 +44,15 @@ function Alumnos() {
                 Alumnos
             </div>
 
+            {TestFunc(test)}
+
             <PieChart data={data}/>
             <Searchbar/>
             
             <br />
 
             <div style={{padding: "20px 0"}}>
-                <AddButton text={"Agregar estudiante"}/>
+                <AddButton text={"Agregar estudiante"} onClick={(e)=>{setTest(!test)}}/>
             </div>
             
             <RoundTable>

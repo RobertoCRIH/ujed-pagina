@@ -1,9 +1,9 @@
 import "./style.scss"
 
-function AddButton({text,click}) {
+function AddButton({text,onClick}) {
     return(
         
-        <button className="addButton" onClick={(e)=>{click()}}>{text}</button>
+        <button className="addButton" onClick={onClick} >{text}</button>
        
     )
 }
