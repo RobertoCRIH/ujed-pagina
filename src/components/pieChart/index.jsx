@@ -24,7 +24,6 @@ function PieChart({data}) {
     const options ={}
     return(
         <>
-            <h1>PieChart</h1>
             <div className="chart">
                 <div className="chart__main">
                     <Pie
@@ -41,6 +40,21 @@ function PieChart({data}) {
                         <p className="item__title">Perfil Mas Común</p>
                         <p className="item__secondary">Lic. en Medicina</p>
                         <p className="item__numberMain">300</p>
+                    </div>
+                    <div className="item">
+                        <p className="item__title">Perfil Menos Común</p>
+                        <p className="item__secondary">Lic. en Electonica</p>
+                        <p className="item__numberMain">12</p>
+                    </div>
+                    <div className="item">
+                        <p className="item__title">Perfil Menos Común</p>
+                        <p className="item__secondary">Lic. en Electonica</p>
+                        <p className="item__numberMain">12</p>
+                    </div>
+                    <div className="item">
+                        <p className="item__title">Perfil Menos Común</p>
+                        <p className="item__secondary">Lic. en Electonica</p>
+                        <p className="item__numberMain">12</p>
                     </div>
                     
                 </div>

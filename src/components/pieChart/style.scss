@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
+    align-items: center;
 
     &__main{
         width: 400px;
@@ -14,7 +15,8 @@
 
     &__secondary{
         flex-grow: 1;
-        
+        height: 400px;
+        overflow-y: scroll;
 
         & .item{
             margin-bottom: 10px;

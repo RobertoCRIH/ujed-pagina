@@ -1,0 +1,22 @@
+$mainColor : #4B5AD7;
+$secondary : #ebedff;
+
+.addButton{
+    padding: 5px 20px ;
+    border-radius: 20px;
+    border: none;
+    background-color: $mainColor;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s;
+    border: 2px solid $mainColor;
+
+    
+
+    &:hover{
+        background-color: $secondary;
+        color: $mainColor;
+    }
+}

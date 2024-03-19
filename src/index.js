@@ -8,6 +8,7 @@ import "./assets/global.scss"
 //Pages
 import Home from './pages/home';
 import Crud from './pages/crud';
+import CarreraEditar from './pages/carreraEditar';
 
 //Route Elements
 
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
   },
   {
     path:"/admin",
-    element: <Crud/>
+    element: <Crud/>,
+  },
+  {
+    path:"/admin/editarcarrera/:id",
+    element: <CarreraEditar/>
   }
 ])
 

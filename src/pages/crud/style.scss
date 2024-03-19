@@ -139,6 +139,39 @@ $mainRed : #B31312;
     }
 }
 
+//Estas son las listas de carreras
+.carreras{
+
+    &__item{
+        margin: 20px 0;
+
+        & .title{
+            background-color: #B31312;
+            font-size: 20px;
+            padding: 10px 25px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+        }
+
+        & .list{
+            background-color: rgb(212, 212, 212);
+
+            &__item{
+                text-decoration: none;
+                color: black;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+
 @media (max-width: 600px) {
     .crud{
         &__nav{

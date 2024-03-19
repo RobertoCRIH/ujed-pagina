@@ -1,5 +1,6 @@
 import RoundTable from "../../components/roundTable/roundTable";
 import Searchbar from "../../components/searchbar/searchbar";
+import AddButton from "../../components/addButton";
 
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
@@ -17,6 +18,10 @@ function Maestros() {
 
             <div className="title">
                  Maestros
+            </div>
+
+            <div style={{padding: "20px 0"}}>
+                <AddButton text={"Agregar maestro"}/>
             </div>
             
             <div>
