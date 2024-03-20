@@ -6,14 +6,7 @@ import imagen3 from "../../assets/images/posgrado.jpg";
 
 import Card from "./card";
 
-const DropIn= {
-    hidden: {
-        y: "100vh"
-    },
-    visible:{
-        y: "0"
-    }
-}
+
 
 function Cards() {
     return(
@@ -21,17 +14,8 @@ function Cards() {
         <div className="cardsTitle">
             EXPLORA NUESTROS PROGRAMAS
         </div>
-        <motion.div 
+        <div 
             className="cards"
-            variants={DropIn}
-            initial={{
-                opacity:0,
-                scale:0.5
-            }}
-            whileInView={{
-                opacity:1,
-                scale:1
-            }}
             
         >
             
@@ -44,7 +28,7 @@ function Cards() {
             <Card img={imagen3} title={"Posgrados"}
             desc={"Da el siguiente paso en tu carrera con los posgrados de la UJED. Descubre programas de alto nivel que te preparan para destacar en tu campo profesional."}/>
 
-        </motion.div>
+        </div>
         </>
     )
 }

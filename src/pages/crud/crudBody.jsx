@@ -1,3 +1,4 @@
+import Admins from "./admins";
 import Alumnos from "./alumnos";
 import Carreras from "./carreras";
 import Maestros from "./maestros";
@@ -30,6 +31,12 @@ function CrudBody({state,stateList}) {
                     <Noticias/>
                 )
             break;
+
+            case stateList[4]:
+                return(
+                    <Admins/>
+                )
+                break
             default:
                 break;
         }

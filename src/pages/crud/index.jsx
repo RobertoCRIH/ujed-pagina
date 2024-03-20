@@ -7,7 +7,8 @@ const crudStates= [
     "Maestros",
     "Alumnos",
     "Carreras",
-    "Noticias"
+    "Noticias",
+    "Admins"
 ]
 
 
