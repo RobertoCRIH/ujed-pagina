@@ -8,6 +8,7 @@ function Card({img,title,desc,goTo}) {
         <motion.div className="card" 
         whileHover={{scale:1.1}}
         onClick={(e)=>navigate(goTo)}
+        
         >
 
                 <img src={img} alt="" />
