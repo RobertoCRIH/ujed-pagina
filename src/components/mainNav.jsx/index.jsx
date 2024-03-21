@@ -36,7 +36,7 @@ function MainNav() {
                             <div className="col">
                                 <div className="title">PROGRAMAS POR NIVEL EDUCATIVO</div>
                                 <Link className="link">Media Superior</Link> <br /> 
-                                <Link className="link">Licenciaturas e Ingenierías</Link> <br /> 
+                                <Link className="link" to={{pathname:"/oferta-educativa/licenciaturas"}}>Licenciaturas e Ingenierías</Link> <br /> 
                                 <Link className="link">Posgrados</Link> <br /> 
                             </div>
                             <div className="col">

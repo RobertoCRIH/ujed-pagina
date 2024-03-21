@@ -1,0 +1,93 @@
+
+.noticiasBanner{
+    height: 500px;
+    background-size: cover;
+
+    &__container{
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.018644957983193322) 100%);
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+
+       
+
+        & h1{
+            color: white;
+            width: clamp(200px,80%,700px);
+            padding-left: 50px;
+        }
+
+        & .fecha{
+            color: white;
+            
+            padding: 5px 0;
+            padding-left: 50px;
+            font-style: italic;
+        }
+
+        & .shareButtons{
+            display: flex;
+            padding: 10px 0;
+            padding-left: 50px;
+            gap: 5px;
+            
+            & .shareBttn{
+                color: white;
+                font-size: 35px;
+                transition: 0.1s;
+
+                &:hover{
+                    color: #B31312;
+                }
+            }
+        }
+    }
+}
+
+.noticiasTexto{
+    padding: 50px 10%;
+}
+
+.noticiasMas{
+    display: flex;
+    margin: 20px 10%;
+    overflow-x: scroll;
+    gap: 20px;
+    padding: 20px 0;
+
+    & .card{
+        cursor: pointer;
+        min-width: 300px;
+        width: 300px;
+        height: 200px;
+        background-size: cover;
+
+        & .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+
+            height: 100%;
+            width: 100%;
+
+            background: rgb(0,0,0);
+            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.018644957983193322) 100%);
+            
+            & p{
+                color: grey;
+                padding: 0 20px;
+            }
+
+            & h3{
+                color: white;
+                padding: 10px 20px;
+                
+            }
+        }
+    }
+}

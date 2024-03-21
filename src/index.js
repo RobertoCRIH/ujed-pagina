@@ -9,6 +9,9 @@ import "./assets/global.scss"
 import Home from './pages/home';
 import Crud from './pages/crud';
 import CarreraEditar from './pages/carreraEditar';
+import OfertaEducativa from './pages/ofertaEducativa';
+import PaginaNoticias from './pages/paginaNoticias';
+
 
 //Route Elements
 
@@ -27,6 +30,14 @@ const router = createBrowserRouter([
   {
     path:"/admin/editarcarrera/:id",
     element: <CarreraEditar/>
+  },
+  {
+    path:"/oferta-educativa/:page",
+    element: <OfertaEducativa/>
+  },
+  {
+    path:"/noticias/:id",
+    element: <PaginaNoticias/>
   }
 ])
 
