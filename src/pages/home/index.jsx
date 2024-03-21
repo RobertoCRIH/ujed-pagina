@@ -5,6 +5,10 @@ import Banner from "./banner.jsx";
 import "./style.scss"
 import Cards from "./cards.jsx";
 import Section from "./section.jsx";
+import Galeria from "./galeria.jsx";
+import Noticias from "./noticias.jsx";
+import Enlaces from "./enlaces.jsx";
+import Footer from "../../components/footer/index.jsx";
 
 function Home() {
     const navigate = useNavigate()
@@ -35,6 +39,14 @@ function Home() {
                         text={"Transformar la sociedad, mediante la formación integral de bachilleres, profesionales, científicos, creadores y ciudadanos conscientes de su responsabilidad social, promoviendo la investigación científica y la innovación en el conocimiento, la vinculación y extensión universitaria. Ser una Institución pública, autónoma, laica, incluyente, que genere de manera integral la cultura y el deporte para contribuir a una sólida formación universitaria, respetuosa de la diversidad, con principios humanistas, comprometida con la equidad y justicia social, atenta a la ampliación pertinente de la oferta y cobertura educativa, potencializando las tecnologías como un detonante para el desarrollo regional en el marco de un mundo globalizado."}
                         img={"https://img.freepik.com/free-photo/colleagues-looking-businesswoman-writing-whiteboard-office-during-presentation_662251-1759.jpg?w=740&t=st=1710817764~exp=1710818364~hmac=3c0b11eabd1c5bcb4cd994492ef456074d808ae9957457d7f8df597a05fe589f"}
            />
+
+           <Galeria/>
+
+           <Noticias/>
+
+           <Enlaces/>
+
+           <Footer/>
             
         </>
 

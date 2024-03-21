@@ -1,0 +1,37 @@
+.mainFooter{
+    & .section1{
+        background-color: #343B41;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        padding: 20px;
+
+        & div{
+            & p{
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: serif;
+            }
+        }
+
+        & a{
+            font-family: serif;
+            color: white;
+        }
+    }
+
+    & .section2{
+        background-color: #B31312;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        & img{
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            
+        }
+    }
+}
