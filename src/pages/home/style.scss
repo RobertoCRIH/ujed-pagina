@@ -273,19 +273,20 @@ $mainRed: #B31312;
     justify-content: center;
     gap: 20px;
     & h2{
-        font-family: serif;
 
     }
 
     & div{
         width: clamp(200px, 90%, 350px);
         padding: 20px;
+        
 
         & ul li{
             padding: 3px 0;
         }
     }
     &__link{
+        
         font-family: serif;
         color: black;
         padding-left: 20px;
