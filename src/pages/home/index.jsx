@@ -1,5 +1,5 @@
 import { Link , useNavigate} from "react-router-dom";
-import MainNav from "../../components/mainNav.jsx";
+import MainNav from "../../components/mainNav";
 import Banner from "./banner.jsx";
 
 import "./style.scss"

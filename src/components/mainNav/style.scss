@@ -1,4 +1,4 @@
-$mainRed: #B11830;
+$mainRed: #B31312;
 
 .mainNav{
     display: flex;
@@ -43,13 +43,13 @@ $mainRed: #B11830;
                 }
 
                 & .content{
- 
+                    padding: 0 30px;
                     display: flex;
                     justify-content: space-between;
                     left: 0;
                     position: absolute;
                     background-color: white;
-                    width: 100vw;
+                    width: 95vw;
                     display: none;
 
                     & .col{

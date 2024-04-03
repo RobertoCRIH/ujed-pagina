@@ -13,11 +13,16 @@
         flex-direction: column;
         justify-content: center;
        
-
+        & .desc{
+            padding-left: 50px;
+            width: clamp(100px,80%,500px);
+            color: rgb(197, 197, 197);
+        }
        
 
         & h1{
             color: white;
+            font-weight: bold;
             width: clamp(200px,80%,700px);
             padding-left: 50px;
         }

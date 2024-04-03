@@ -11,6 +11,7 @@ import Crud from './pages/crud';
 import CarreraEditar from './pages/carreraEditar';
 import OfertaEducativa from './pages/ofertaEducativa';
 import PaginaNoticias from './pages/paginaNoticias';
+import PaginaCarrera from './pages/paginaCarrera';
 
 
 //Route Elements
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
   {
     path:"/noticias/:id",
     element: <PaginaNoticias/>
+  },
+  {
+    path: "/pagina-oferta/:id/:nombre",
+    element: <PaginaCarrera/>
+
   }
 ])
 

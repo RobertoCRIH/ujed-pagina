@@ -1,5 +1,5 @@
 import Footer from "../../components/footer/index.jsx";
-import MainNav from "../../components/mainNav.jsx";
+import MainNav from "../../components/mainNav";
 import NoticiasBanner from "./noticiasBanner.jsx";
 import NoticiasMas from "./noticiasMas.jsx";
 import NoticiasTexto from "./noticiasTexto.jsx";

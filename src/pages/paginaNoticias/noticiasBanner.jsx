@@ -13,6 +13,9 @@ function NoticiasBanner({imageBg,title}) {
                 <h1>
                     {title}
                 </h1>
+                <div className="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea rerum id quam. Suscipit cupiditate quisquam, facilis consequuntur, voluptates nulla, voluptatibus impedit sint aliquam repudiandae ea repellat dignissimos? Autem, sint earum?
+                </div>
                 <p className="fecha">23 de Marzo 2024</p>
                 <div className="shareButtons">
                     <FacebookShareButton

@@ -1,0 +1,131 @@
+$mainRed: #B31312;
+
+//Esto es el banner/hero section de la página
+.cHero{
+    width: 100%;
+    padding: 0;
+
+    &__img{
+        width: 100%;
+        height: 500px;  
+        object-fit: cover;
+    }
+
+    &__title{
+        position: relative;
+        top: -80px;
+        display: flex;
+        justify-content: center;
+        height: 0;
+
+        & .container{
+            background-color: $mainRed;
+            width: clamp(300px,80%,500px);
+            padding: 30px 10px;
+            height: min-content;
+            color: white;
+
+            cursor: grab;
+            & h1{
+                font-size: 28px;
+                padding-bottom: 10px;
+                text-align: center;
+                user-select: none;
+            }
+
+            & p{
+                user-select: none;
+                padding-top: 10px;
+                text-align: center;
+            }
+        }
+        
+    }
+}
+
+@media (max-width:600px){
+    .cHero{
+        &__title{
+            position: static;
+            height: min-content;
+
+            & .container{
+                width: 100%;
+            }
+        }
+    }
+}
+
+//Este es el body de la pagina principal de las carreras
+
+.carreraBody{
+
+    padding: 100px 0;
+
+   
+
+}
+
+.carreraSecciones{
+    margin-top: 20px;
+    padding: 0px 10%;
+
+    & h2{
+        color: $mainRed;
+        font-weight: bold;
+        font-size: 40px;
+        padding: 10px 0;
+    }   
+    & p{
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(46, 46, 46);
+
+        white-space: pre-line;
+    }
+}
+
+.campoLaboral{
+
+    margin: 50px 10%;
+
+    display: flex;
+    flex-wrap: wrap;
+    
+
+    & img{
+        flex-grow: 1;
+        width: 50%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    & .content{
+
+        background-color: rgb(236, 236, 236);
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 20px;
+        flex-grow: 1;
+
+        width: 400px;
+
+        & .title{
+            color: $mainRed;
+            font-weight: bold;
+            font-size: 40px;
+            padding: 10px 0;
+        }
+
+        & .text{
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(46, 46, 46);
+        }
+    }
+    
+}

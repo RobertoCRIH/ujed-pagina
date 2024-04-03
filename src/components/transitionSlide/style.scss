@@ -1,0 +1,39 @@
+$mainRed: #B31312;
+
+.tSlide{
+
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    & .content{
+        & .icon{
+            text-align: center;
+            font-size: 150px;
+            color: $mainRed;
+        }
+
+        & .text{
+            background-color: $mainRed;
+            border: 1px solid $mainRed;
+            padding: 10px 30px;
+            color: white;
+            & h1{
+                font-size: 25px;
+            }
+            & p{
+                font-size: 18px;
+            }
+        }
+    }
+}

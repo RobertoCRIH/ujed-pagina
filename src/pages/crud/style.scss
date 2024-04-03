@@ -142,34 +142,57 @@ $mainRed : #B31312;
 //Estas son las listas de carreras
 .carreras{
 
-    &__item{
-        margin: 20px 0;
+    &__card{
+        border: 1px solid $mainRed;
+        margin-bottom: 20px;
 
-        & .title{
-            background-color: #B31312;
-            font-size: 20px;
-            padding: 10px 25px;
-            color: white;
+        &__title{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            width: 100%;
-            border: none;
+            
+            font-size: 18px;
+            background-color: $mainRed;
+            color: white;
+            font-weight: bold;
+            padding: 10px 30px;
+
+            & button{
+                padding: 5px 15px;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+            }
+            & .editar{
+                background-color: white;
+                color: green;
+                border: 2px solid green;
+            }
+            & .eliminar{
+                background-color: white;
+                color: red;
+                border: 2px solid red;
+            }
         }
 
-        & .list{
-            background-color: rgb(212, 212, 212);
-
-            &__item{
-                text-decoration: none;
-                color: black;
-                display: flex;
-                justify-content: space-between;
+        & .row{
+            display: flex;
+            justify-content: space-between;
+            
+            & .item{
+                flex-grow: 1;
+                border: 1px solid $mainRed;
                 padding: 10px 20px;
+
+                &__title{
+                    color: $mainRed;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
             }
         }
     }
+
 }
 
 .noticias{
