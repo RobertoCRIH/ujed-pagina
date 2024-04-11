@@ -6,13 +6,19 @@ import { IoIosArrowDown } from "react-icons/io";
 
 import { Link } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+
 function MainNav() {
+    const navigation = useNavigate();
+
     const [mobileVisible,SetMobileVisible] = useState(true)
     return(
         <div className="mainNav">
             
             <div className="logo">
-                <img src={logo} alt="" />
+                <img src={logo} alt="" style={{cursor:"pointer"}}  onClick={e=>{
+                    navigation("/")
+                }}/>
             </div>
 
             <div className="mobileButton">
@@ -24,8 +30,8 @@ function MainNav() {
                     <Link className="options" to={{pathname:"/"}}>Noticias</Link>
                     <Link className="options" to={{pathname:"/"}}>Galeria</Link>
                     <a className="options" href="https://escolares.ujed.mx">Control Escolar</a>
-                    <Link className="options" to={{pathname:"/"}}>Administrador</Link>
-                    <Link className="options" to={{pathname:"/"}}>Registrarse</Link>
+                    <Link className="options" to={{pathname:"/login"}}>Administrador</Link>
+                    
                 </div>
                 <div className="content__two">
 
@@ -35,18 +41,20 @@ function MainNav() {
                         <div className="content">
                             <div className="col">
                                 <div className="title">PROGRAMAS POR NIVEL EDUCATIVO</div>
-                                <Link className="link">Media Superior</Link> <br /> 
+                                <Link className="link" to={{pathname:"/oferta-educativa/mediasuperior"}}>Media Superior</Link> <br /> 
                                 <Link className="link" to={{pathname:"/oferta-educativa/licenciaturas"}}>Licenciaturas e Ingenierías</Link> <br /> 
-                                <Link className="link">Posgrados</Link> <br /> 
+                                <Link className="link" to={{pathname:"/oferta-educativa/especialidades"}}>Especialidades</Link> <br /> 
+                                <Link className="link" to={{pathname:"/oferta-educativa/maestrias"}}>Maestrías</Link> <br /> 
+                                <Link className="link" to={{pathname:"/oferta-educativa/doctorados"}}>Doctorados</Link> <br /> 
                             </div>
                             <div className="col">
                                 <div className="title">OFERTA POR UNIDAD ACEDEMICA</div>
                                 <Link className="link">Escuelas y Facultades</Link> <br />
-                                <Link className="link">Universidad Virtual</Link>
+                                <Link className="link" to={{pathname:"/universidad-virtual"}}>Universidad Virtual</Link>
                             </div>
                             <div className="col">
                                 <div className="title">IDIOMAS</div>
-                                <Link className="link">Centro de Idiomas</Link>
+                                <Link className="link" to={{pathname:"/oferta-educativa/centro-idiomas"}}>Centro de Idiomas</Link>
                             </div>
                         </div>
                     </div>
@@ -57,16 +65,16 @@ function MainNav() {
                         <div className="content">
                             <div className="col">
                                 <div className="title">INSTITUTOS</div>
-                                <Link className="link">Bellas Artes</Link> <br /> 
-                                <Link className="link">Ciencias Sociales</Link> <br /> 
-                                <Link className="link">Investigación Científica</Link> <br /> 
-                                <Link className="link">Investigación Histórica</Link> <br /> 
-                                <Link className="link">Investigación Jurídica</Link> <br /> 
-                                <Link className="link">Silvicultura</Link> <br /> 
+                                <Link className="link" to={{pathname:"/bellas-artes"}}>Bellas Artes</Link> <br /> 
+                                <Link className="link" to={{pathname:"/ciencias-sociales"}}>Ciencias Sociales</Link> <br /> 
+                                <Link className="link" to={{pathname:"/investigacion-cientifica"}}>Investigación Científica</Link> <br /> 
+                                <Link className="link" to={{pathname:"/investigacion-historica"}}>Investigación Histórica</Link> <br /> 
+                                <Link className="link" to={{pathname:"/investigacion-juridica"}}>Investigación Jurídica</Link> <br /> 
+                                <Link className="link" to={{pathname:"/silvicultura"}}>Silvicultura</Link> <br /> 
                             </div>
                             <div className="col">
                                 <div className="title">INVESTIGACIÓN</div>
-                                <Link className="link">Proyectos de Investigación</Link> <br />
+                                <Link className="link">Tesis Micaf</Link> <br />
 
                             </div>
                         </div>
@@ -80,28 +88,26 @@ function MainNav() {
                                 <div className="title">SERVICIOS ACEDÉMICOS</div>
                                 <a href="http://ssga.ujed.mx" className="link">Subsecretaría General Académica</a> <br />
                                 <a href="https://escolares.ujed.mx" className="link">Servicios Escolares</a> <br />
-                                <Link className="link">Movilidad</Link> <br /> 
                                 <a href="http://extension.ujed.mx" className="link">Extensión Universitaria</a> <br />
-                                <Link className="link">Dirección General de Bibliotecas</Link> <br /> 
-                                <Link className="link">Coordinación de Capacitación Institucional</Link> <br /> 
+                                <Link className="link" to={{pathname:"/direccion-general-de-bibliotecas"}}>Dirección General de Bibliotecas</Link> <br /> 
+                                <Link className="link" to={{pathname:"/recursos-humanos"}}>Dirección de Desarrollo y Gestión de Recursos Humanos</Link> <br /> 
 
                             </div>
                             <div className="col">
                                 <div className="title">SERVICIOS A LA COMUNIDAD</div>
-                                <Link className="link">Dirección de Vinculación Institucional</Link> <br />
-                                <Link className="link">Centro de Negocios</Link>
-                                <Link className="link">Servicios ofrecidos por cada unidad</Link> <br /> 
+                                <Link className="link" to={{pathname:"/centro-de-negocios"}}>Centro de Negocios</Link> <br />
+                                {/* <Link className="link">Servicios ofrecidos por cada unidad</Link> <br />  */}
                             </div>
                             <div className="col">
                                 <div className="title">CULTURA Y DEPORTE</div>
-                                <Link className="link">Difusión Cultural</Link> <br />
-                                <Link className="link">Centro del Desarrollo del Deporte</Link>
+                                <Link className="link" to={{pathname:"/difusion-cultural"}}>Difusión Cultural</Link> <br />
+                                <Link className="link" to={{pathname:"/desarrollo-del-deporte"}}>Centro del Desarrollo del Deporte</Link>
                             </div>
                             <div className="col">
                                 <div className="title">COMUNICACIÓN</div>
-                                <Link className="link">Comunicación Social</Link> <br />
-                                <Link className="link">TV UJED</Link><br />
-                                <Link className="link">Publicaciones</Link>
+                                {/* <Link className="link">Comunicación Social</Link> <br /> */}
+                                <a className="link" href="http://tv.ujed.mx/">TV UJED</a><br />
+                                {/* <Link className="link">Publicaciones</Link> */}
                             </div>
                         </div>
                     </div>
@@ -113,10 +119,10 @@ function MainNav() {
                             
                             <div className="col">
                                 <div className="title">LA UNIVERSIDAD</div>
-                                <Link className="link">Contacto</Link> <br />
-                                <Link className="link">Rectoría</Link>
+                                <Link className="link" to={{pathname:"/sobre-la-universidad"}}>Sobre Nosotros</Link> <br />
+                                {/* <Link className="link">Rectoría</Link>
                                 <Link className="link">Identidad Institucional</Link> <br /> 
-                                <Link className="link">Historia</Link>
+                                <Link className="link">Historia</Link> */}
 
                             </div>
                             <div className="col">

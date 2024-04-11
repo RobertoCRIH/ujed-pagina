@@ -12,6 +12,22 @@ import CarreraEditar from './pages/carreraEditar';
 import OfertaEducativa from './pages/ofertaEducativa';
 import PaginaNoticias from './pages/paginaNoticias';
 import PaginaCarrera from './pages/paginaCarrera';
+import MasNoticias from './pages/masNoticias';
+import PlanEstudios from './pages/planEstudios';
+import UniversidadVirtual from './pages/universidadVirtual';
+import BellasArtes from './pages/bellasArtes';
+import CienciasSociales from './pages/cienciasSociales';
+import InvCientifica from './pages/invCientifica';
+import InvHistorica from './pages/invHistorica';
+import InvJuridica from './pages/invJuridica';
+import Silvicultura from './pages/silvicultura';
+import Login from './pages/login';
+import Bibliotecas from './pages/bibliotecas';
+import RecursosHumanos from './pages/recursosHumanos';
+import CentroDeNegocios from './pages/centroDeNegocios';
+import DifusionCultural from './pages/difusionCultural';
+import DesarrolloDelDeporte from './pages/desarrolloDelDeporte';
+import SobreUniversidad from './pages/sobreUniversidad';
 
 
 //Route Elements
@@ -44,6 +60,70 @@ const router = createBrowserRouter([
     path: "/pagina-oferta/:id/:nombre",
     element: <PaginaCarrera/>
 
+  },
+  {
+    path:"/mas-noticias",
+    element: <MasNoticias/>
+  },
+  {
+    path:"/plan-de-estudios/:id",
+    element: <PlanEstudios/>
+  },
+  {
+    path:"/universidad-virtual",
+    element: <UniversidadVirtual/>
+  },
+  {
+    path:"/bellas-artes",
+    element: <BellasArtes/>
+  },
+  {
+    path:"/ciencias-sociales",
+    element: <CienciasSociales/>
+  },
+  {
+    path:"/investigacion-cientifica",
+    element: <InvCientifica/>
+  },
+  {
+    path: "/investigacion-historica",
+    element: <InvHistorica/>
+  },
+  {
+    path: "/investigacion-juridica",
+    element: <InvJuridica/>
+  },
+  {
+    path:"/silvicultura",
+    element: <Silvicultura/>
+  },
+  {
+    path: "/login",
+    element: <Login/>
+  },
+  {
+    path: "/direccion-general-de-bibliotecas",
+    element: <Bibliotecas/>
+  },
+  {
+    path: "/recursos-humanos",
+    element: <RecursosHumanos/>
+  },
+  {
+    path: "/centro-de-negocios",
+    element: <CentroDeNegocios/>
+  },
+  {
+    path: "/difusion-cultural",
+    element: <DifusionCultural/>
+  },
+  {
+    path: "/desarrollo-del-deporte",
+    element: <DesarrolloDelDeporte/>
+  },
+  {
+    path: "/sobre-la-universidad",
+    element: <SobreUniversidad/>
   }
 ])
 

@@ -19,7 +19,8 @@ function Cards() {
         >
             
             <Card img={"https://images.pexels.com/photos/356065/pexels-photo-356065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} title={"Media Superior"}
-            desc={"Ofrecemos programas educativos de nivel medio superior que te brindan las herramientas necesarias para construir un camino hacia el éxito."}/>
+            desc={"Ofrecemos programas educativos de nivel medio superior que te brindan las herramientas necesarias para construir un camino hacia el éxito."}
+            goTo={"/oferta-educativa/mediasuperior"}/>
             
             <Card img={"https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} title={"Carreras y licenciaturas"} 
             desc={"Desde programas innovadores hasta oportunidades de aprendizaje práctico, estamos aquí para ayudarte a alcanzar tus metas profesionales."}

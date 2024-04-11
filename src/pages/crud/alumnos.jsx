@@ -31,14 +31,14 @@ function Alumnos() {
 
     const [alumnos,setAlumnos] = useState([])
     useEffect(()=>{
-        Axios.get('http://localhost:3001/alumnos/obtenertodos').then((response)=>{
+        Axios.get('http://localhost:3001/alumnos/obtener').then((response)=>{
           setAlumnos(response.data);
         })
       },[])
 
       const [carreras,setCarreras] = useState([])
       useEffect(()=>{
-          Axios.get('http://localhost:3001/carreras/obtenertodos').then((response)=>{
+          Axios.get('http://localhost:3001/carreras/obtener').then((response)=>{
             setCarreras(response.data);
           })
         },[])
@@ -64,24 +64,30 @@ function Alumnos() {
                         if(idCarrera){
                             if(telefono){
                                 if(semestre){
-                                    Axios.post("http://localhost:3001/alumnos/insertar",{
+                                    Axios.post("http://localhost:3001/admin/alumnos/insertar",{
                                         nombre: nombre,
                                         correo: correo,
                                         matricula: matricula,
                                         idcarrera: idCarrera,
                                         telefono: telefono,
                                         semestre: semestre
-                                    })
+                                    }).then(response=>{
+                                        console.log(response.data.idnuevo)
+
+                                        setAlumnos([...alumnos,{
+                                            idalumno: response.data.idnuevo,
+                                            nombre: nombre,
+                                            correo: correo,
+                                            matricula: matricula,
+                                            idcarrera: "",
+                                            telefono: telefono,
+                                            semestre: semestre
+                                        }])
+
+                                    }).catch(err=>console.log(err))
 
                                     setAddModal(false);
-                                    setAlumnos([...alumnos,{
-                                        nombre: nombre,
-                                        correo: correo,
-                                        matricula: matricula,
-                                        idcarrera: "",
-                                        telefono: telefono,
-                                        semestre: semestre
-                                    }])
+                                    
                                 }else{
                                     window.alert("El semestre no se indicó")
                                 }
@@ -117,7 +123,7 @@ function Alumnos() {
                         if(idCarrera){
                             if(telefono){
                                 if(semestre){
-                                    Axios.patch("http://localhost:3001/alumnos/actualizar",{
+                                    Axios.patch("http://localhost:3001/admin/alumnos/actualizar",{
                                         idalumno: editId,
                                         nombre: nombre,
                                         correo: correo,
@@ -126,9 +132,14 @@ function Alumnos() {
                                         telefono: telefono,
                                         semestre: semestre
 
+                                    }).then(response=>{
+                                        setEditModal(false);
+                                    })
+                                    .catch(err=>{
+                                        console.log(err.data)
                                     })
 
-                                    setEditModal(false);
+                                    
                                     
                                 }else{
                                     window.alert("El semestre no se indicó")
@@ -157,9 +168,16 @@ function Alumnos() {
         const [eraseId,setEraseId] = useState()
 
         function EliminarAlumnos() {
-            Axios.delete("http://localhost:3001/alumnos/eliminar",{data:{idalumno:eraseId}})
-            setEraseModal(false);
-            setAlumnos( alumnos.filter( x => x.idalumno !== eraseId ) )
+            Axios.delete("http://localhost:3001/admin/alumnos/eliminar",{data:{idalumno:eraseId}})
+            .then(response=>{
+                console.log(response)
+                setEraseModal(false);
+                setAlumnos( alumnos.filter( x => x.idalumno !== eraseId ) )
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+            
         }
     return(
         <>
@@ -183,7 +201,7 @@ function Alumnos() {
                         Matricula
                     </div>
                     <div className="input">
-                        <input type="text" onChange={(e)=>setMatricula(e.target.value)}/>
+                        <input type="number" onChange={(e)=>setMatricula(e.target.value)}/>
                     </div>
 
                     <div className="subtitle">
@@ -245,7 +263,7 @@ function Alumnos() {
                         Matricula
                     </div>
                     <div className="input">
-                        <input type="text" onChange={(e)=>setMatricula(e.target.value)}/>
+                        <input type="number" onChange={(e)=>setMatricula(e.target.value)}/>
                     </div>
 
                     <div className="subtitle">
@@ -309,7 +327,7 @@ function Alumnos() {
 
             
 
-            <PieChart data={data}/>
+            {/* <PieChart data={data}/> */}
             <Searchbar changeState={setSearchbar}/>
             
             <br />

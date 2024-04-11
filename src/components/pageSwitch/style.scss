@@ -1,0 +1,24 @@
+$mainRed : #B31312;
+
+
+.pageSwitch{
+    padding: 0 10%;
+
+    display: flex;
+    background-color: #B31312;
+    justify-content: space-between;
+    align-items: center;
+
+    & button{
+        cursor: pointer;
+        height: 100%;
+        // border-radius: 15px;
+        padding: 5px 20px;
+        background-color: #B31312;
+
+        border: 2px solid $mainRed;
+
+        font-size: 16px;
+        color: white;
+    }
+}

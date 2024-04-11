@@ -5,8 +5,12 @@ import { useState, useEffect } from "react";
 import Axios from 'axios';
 import MyModal from "../../components/myModal";
 
+import {useNavigate} from 'react-router-dom';
+
 
 function Carreras() {
+    const navigation = useNavigate();
+
     //Filtro para busqueda
 
     const [filter,setFilter] = useState("");
@@ -35,13 +39,16 @@ function Carreras() {
         "(DOCTORADO) Ciencias de la Salud",
         "(DOCTORADO) Ciencias Económico-Administrativas",
         "(DOCTORADO) Ciencias Químico-Biológicas",
-        "(DOCTORADO) Ciencias Sociales y Humanidades"
+        "(DOCTORADO) Ciencias Sociales y Humanidades",
+        "Centro de Idiomas Durango",
+        "Centro de Idiomas Gómez Palacio",
+        "Carrera Virtual"
         
     ]
 
     const [carreras,setCarreras] = useState([]);
     useEffect(()=>{
-        Axios.get('http://localhost:3001/carreras/obtenertodos').then((response)=>{
+        Axios.get('http://localhost:3001/carreras/obtener').then((response)=>{
           setCarreras(response.data);
         })
       },[])
@@ -63,7 +70,7 @@ function Carreras() {
 
       function AgregarCarrera() {
         if(nombre,area,ciudad,duracion,descripcion,metas,objetivos,empleosasp){
-            Axios.post("http://localhost:3001/carreras/insertar",{
+            Axios.post("http://localhost:3001/admin/carreras/insertar",{
                 nombre: nombre,
                 area:area,
                 relprof: relprof,
@@ -102,7 +109,7 @@ function Carreras() {
 
       function EditarCarrera() {
         if(nombre,area,ciudad,duracion,descripcion,metas,objetivos,empleosasp){
-            Axios.patch("http://localhost:3001/carreras/actualizar",{
+            Axios.patch("http://localhost:3001/admin/carreras/actualizar",{
                     idcarrera: editId,
                     nombre: nombre,
                     area:area,
@@ -126,7 +133,7 @@ function Carreras() {
       const [deleteId, setDeleteId] = useState(0)
 
       function EliminarCarrera() {
-        Axios.delete("http://localhost:3001/carreras/eliminar",{data:{idc:deleteId}});
+        Axios.delete("http://localhost:3001/admin/carreras/eliminar",{data:{idc:deleteId}});
         setCarreras( carreras.filter( x => x.idcarrera !== deleteId ) );
         setDeleteModal(false);
       }
@@ -311,6 +318,14 @@ function Carreras() {
                             setDeleteModal(true);
                             setDeleteId(i.idcarrera);
                         }}>Eliminar</button>
+
+                        <button className="plan"
+                            onClick={y=>{
+                                navigation("/plan-de-estudios/"+i.idcarrera) 
+                            }}
+                        >
+                            Ver Plan de Estudios
+                        </button>
                     </div>
                     <div className="carreras__card__content">
 

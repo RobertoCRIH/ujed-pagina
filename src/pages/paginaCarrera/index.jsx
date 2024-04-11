@@ -2,6 +2,7 @@ import MainNav from "../../components/mainNav/index.jsx"
 import CarreraHero from "./carreraHero.jsx";
 import CarreraSecciones from "./carreraSecciones.jsx";
 import TransitionSlide from "../../components/transitionSlide"
+import Footer from "../../components/footer/index.jsx";
 
 import "./style.scss"
 
@@ -38,6 +39,9 @@ import arte from "../../assets/images/artista.jpg";
 import arqui from "./../../assets/images/arquitecto.jpg";
 import veterinario from "../../assets/images/veterinario.jpg";
 import predeterminado from "./../../assets/images/ujed banner.jpg"
+import Duracion from "./duracion.jsx";
+import Inscripciones from "./inscripciones.jsx";
+import PlanEstudios from "./planEstudios.jsx";
 
 
 
@@ -54,10 +58,10 @@ function PaginaCarrera() {
     
 
     useEffect(()=>{
-        Axios.post('http://localhost:3001/carreras/obtener',{
-            idc: id
+        Axios.post('http://localhost:3001/carreras/obtener1',{
+            idcarrera: id
         }).then((response)=>{
-          setCarrera(response.data);
+            setCarrera(response.data);
             setIsLoading(false);
           
         })
@@ -227,11 +231,21 @@ function PaginaCarrera() {
                 <CarreraSecciones title={"Objetivos"}>
                     {carrera[0].objetivos}
                 </CarreraSecciones>
+
+                <CarreraSecciones title={"Perfil del Egresado"}>
+                    {carrera[0].metas}
+                </CarreraSecciones>
+
+                <Duracion numero={carrera[0].duracion}/>
+
+                <PlanEstudios semestres={carrera[0].duracion} idcarrera={carrera[0].idcarrera}/>
+
+                <Inscripciones/>    
                 
 
             </div>
 
-            
+            <Footer/>
 
             <TransitionSlide 
             nombreCarrera={carrera[0].nombre}

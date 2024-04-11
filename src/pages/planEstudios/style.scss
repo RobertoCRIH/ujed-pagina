@@ -1,0 +1,61 @@
+.listaPlanes{
+    padding: 0 10%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+
+    &__item{
+        padding: 20px 10px;
+        
+        border: 1px solid rgb(151, 151, 151);
+        
+        & .materia{
+            display: flex;
+            align-items: center;
+
+            & button{
+                cursor: pointer;
+
+                background-color: transparent;
+                border: none;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                padding: 10px;
+                font-size: 18px;
+            }
+        }
+
+        & .addMateria{
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+
+            & input{
+                padding: 5px 15px;
+
+                border-radius: 15px;
+
+                border: 1px solid gray;
+            }
+
+            & button{
+
+                background-color: transparent;
+
+                border: none;
+                display: flex;
+                align-items: center;
+                color: green;
+
+                font-size: 30px;
+                cursor: pointer;
+            }
+
+        }
+    }
+}

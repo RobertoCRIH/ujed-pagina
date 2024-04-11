@@ -1,0 +1,43 @@
+$mainRed: #B31312;
+
+
+.GenericSlider{
+    // background-color: red;
+    margin: 0 10%;
+    padding: 50px 0; 
+
+    overflow-x: scroll;
+
+    & .innerContainer{
+
+        display: flex;
+        gap: 10px;
+        
+
+
+        & .item{
+            flex-shrink: 0;
+            width: 50%;
+
+            background-color: rgb(226, 226, 226);
+
+            & img{
+                width: 100%;
+
+                aspect-ratio: 16/9;
+                object-fit: cover;
+            }
+
+            & .text{
+                padding: 10px;
+
+                white-space: pre-line;
+
+                & h4{
+                    font-size: 20px;
+                    color: $mainRed;
+                }
+            }
+        }
+    }
+}

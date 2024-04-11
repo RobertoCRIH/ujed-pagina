@@ -34,23 +34,28 @@ function Maestros() {
                 if(especialidad){
                     if(horario){
                         if(turno){
-                            Axios.post('http://localhost:3001/maestros/insertar',{
+                            Axios.post('http://localhost:3001/admin/maestros/insertar',{
                                 nombre: nombre,
                                 telefono: telefono,
                                 especialidad: especialidad,
                                 horario: horario,
                                 turno: turno
                             })
+                            .then(response =>{
+                                setMaestros([...maestros,{
+                                    idmaestro: response.data.nuevoid,
+                                    nombre: nombre,
+                                    telefono: telefono,
+                                    especialidad: especialidad,
+                                    horario: horario,
+                                    turno: turno
+                                }])
 
-                            setModalAdd(false)
+                                setModalAdd(false)
+                            })
+                            .catch(err=>console.log(err))
 
-                            setMaestros([...maestros,{
-                                nombre: nombre,
-                                telefono: telefono,
-                                especialidad: especialidad,
-                                horario: horario,
-                                turno: turno
-                            }])
+                              
                         }else{
                             window.alert("El turno no fue escogido.")
                         }
@@ -82,7 +87,7 @@ function Maestros() {
                 if(especialidad){
                     if(horario){
                         if(turno){
-                            Axios.patch("http://localhost:3001/maestros/actualizar",{
+                            Axios.patch("http://localhost:3001/admin/maestros/actualizar",{
                                 idmaestro: editId,
                                 nombre: nombre,
                                 telefono: telefono,
@@ -90,8 +95,16 @@ function Maestros() {
                                 horario: horario,
                                 turno: turno
                             })
+                            .then(response =>{
+                                setModalEdit(false)
+                            })
+                            .catch(err=>{
+                                console.log(err.data)
+                                window.alert("Algo ocurrió, intentelo otra vez")
+                                setModalEdit(false)
+                            })
 
-                            setModalEdit(false)
+                            
 
                         }else{
                             window.alert("El turno no fue escogido.")
@@ -117,8 +130,15 @@ function Maestros() {
     const [eraseId,setEraseId] = useState();
 
     function EliminarMaestros() {
-        Axios.delete("http://localhost:3001/maestros/eliminar",{data:{idmaestro:eraseId}});
-        setModalErase(false);
+        Axios.delete("http://localhost:3001/admin/maestros/eliminar",{data:{idmaestro:eraseId}})
+        .then(response=>{
+
+            setModalErase(false);
+
+        })
+        .catch(err=>{
+            console.log(err);
+        })
         setMaestros( maestros.filter( x => x.idmaestro !== eraseId ) )
 
     }
@@ -126,7 +146,7 @@ function Maestros() {
     const [maestros,setMaestros] = useState([]);
 
     useEffect(()=>{
-        Axios.get('http://localhost:3001/maestros/obtener').then((response)=>{
+        Axios.get('http://localhost:3001/admin/maestros/obtener').then((response)=>{
           setMaestros(response.data);
         })
       },[])
