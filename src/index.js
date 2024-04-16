@@ -30,6 +30,17 @@ import DesarrolloDelDeporte from './pages/desarrolloDelDeporte';
 import SobreUniversidad from './pages/sobreUniversidad';
 
 
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import ExamenesCeneval from './pages/examenesCeneval';
+import CenevalEgel from './pages/cenevalEgel';
+import CenevalExani from './pages/cenevalExani';
+import CenevalEgal from './pages/cenevalEgal';
+import CapacitacionInstitucional from './pages/capacitacion';
+import CorreoInstitucional from './pages/correoInstitucional';
+import ComunicacionSocial from './pages/comunicacionSocial';
+import ControlCalidad from './pages/controlCalidad';
+
+
 //Route Elements
 
 
@@ -124,6 +135,38 @@ const router = createBrowserRouter([
   {
     path: "/sobre-la-universidad",
     element: <SobreUniversidad/>
+  },
+  {
+    path: "/examenes-ceneval",
+    element: <ExamenesCeneval/>
+  },
+  {
+    path: "/ceneval-egel",
+    element: <CenevalEgel/>
+  },
+  {
+    path: "/ceneval-exani",
+    element: <CenevalExani/>
+  },
+  {
+    path: "/ceneval-egal",
+    element: <CenevalEgal/>
+  },
+  {
+    path:"/coordinacion-de-capacitacion-institucional",
+    element: <CapacitacionInstitucional/>
+  },
+  {
+    path:"/correo-institucional",
+    element: <CorreoInstitucional/>
+  },
+  {
+    path:"/comunicacion-social",
+    element: <ComunicacionSocial/>
+  },
+  {
+    path: "/sistema-integral-de-gestión-de-calidad",
+    element: <ControlCalidad/>
   }
 ])
 

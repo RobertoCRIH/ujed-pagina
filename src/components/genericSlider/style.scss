@@ -6,25 +6,26 @@ $mainRed: #B31312;
     margin: 0 10%;
     padding: 50px 0; 
 
-    overflow-x: scroll;
+    overflow: hidden;
 
     & .innerContainer{
 
-        display: flex;
-        gap: 10px;
+        width: 100%;
+        background-color: red;
+        
         
 
 
         & .item{
-            flex-shrink: 0;
-            width: 50%;
+            width: 100%;
+            border: 1px solid black;
 
             background-color: rgb(226, 226, 226);
 
             & img{
-                width: 100%;
 
-                aspect-ratio: 16/9;
+                width: 100%;
+                aspect-ratio: 3/2;
                 object-fit: cover;
             }
 
@@ -37,6 +38,93 @@ $mainRed: #B31312;
                     font-size: 20px;
                     color: $mainRed;
                 }
+            }
+        }
+    }
+}
+
+.sliderII{
+
+
+
+    display: flex;
+    align-items: center;
+    margin: 0 10%;
+
+    & .arrow{
+        min-width: 5vw;
+        display: flex;
+        justify-content: center;
+        
+
+        & button{
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            padding: 0 10px;
+        }
+        
+    }
+
+    &__card{
+
+       
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        
+        &__content{
+            background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5270483193277311) 73%, rgba(253,187,45,0) 100%);   
+            padding: 20px;
+            & h3{
+                font-size: 25px;
+                color: white;
+                font-weight: bolder;
+            }
+
+            & p{
+                color: white    ;
+            }
+
+            & .buttons{
+                display: flex;
+                justify-content: center;
+
+                gap: 50px;
+                & button{
+                    background-color: white;
+                    border: none;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                }
+
+                & .selected{
+                    background-color: #B31312;
+                }
+            }
+
+            
+        }
+
+        & .arrows{
+            height: 0;
+            position: relative;
+            top: -300px;
+
+            display: flex;
+            justify-content: space-between;
+
+            & button{
+
+                color: #B31312;
+                font-size: 50px;
+                background-color: none;
+                border: none;
             }
         }
     }

@@ -14,13 +14,13 @@ function PlanEstudios() {
 
 
     useEffect(()=>{
-        Axios.post('http://localhost:3001/carreras/obtener',{
-            idc: id
+        Axios.post('http://localhost:3001/carreras/obtener1',{
+            idcarrera: id
         }).then((response)=>{
           setCarrera(response.data);
             setIsLoading(false);
           
-        })
+        }).catch(err=>console.log(err))
       },[])
 
     if(isLoading){

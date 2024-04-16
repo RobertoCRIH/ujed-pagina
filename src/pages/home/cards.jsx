@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 
-
+import Ceneval from "../../assets/images/ceneval.jpg"
 
 import Card from "./card";
 
@@ -27,8 +27,8 @@ function Cards() {
             goTo={"/oferta-educativa/licenciaturas"}
             />
 
-            <Card img={"https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} title={"Posgrados"}
-            desc={"Da el siguiente paso en tu carrera con los posgrados de la UJED. Descubre programas de alto nivel que te preparan para destacar en tu campo profesional."}/>
+            <Card img={Ceneval} title={"Ceneval"}
+            desc={"Mas información sobre los próximos exámenes de Ceneval."} goTo={"/examenes-ceneval"}/>
 
         </motion.div>
         </>

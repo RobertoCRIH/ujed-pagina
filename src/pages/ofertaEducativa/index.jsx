@@ -130,7 +130,7 @@ function OfertaEducativa() {
                         <ListaOfertas area={"(DOCTORADO) Ciencias de la Salud"} lista={carreras} />
                         <ListaOfertas area={"(DOCTORADO) Ciencias Económico-Administrativas"} lista={carreras} />
                         <ListaOfertas area={"(DOCTORADO) Ciencias Químico Biológicas"} lista={carreras} />
-                        <ListaOfertas area={"(DOCTORADO) Ciencias Sociales y Humanidades"} lista={carreras} />DOCTORADO
+                        <ListaOfertas area={"(DOCTORADO) Ciencias Sociales y Humanidades"} lista={carreras} />  
                     </>
                 )
             break;

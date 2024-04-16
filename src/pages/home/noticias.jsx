@@ -15,19 +15,7 @@ function Noticias() {
                 <Noticia/>
                 <Noticia/>
 
-                <Noticia/>
-
-                <Noticia/>
-                <Noticia/>
-
-                <Noticia/>
-
-                <Noticia/>
-                <Noticia/>
-
-                <Noticia/>
-
-                <Noticia/>
+                
             </div>
 
             <div className="homeNoticias__footer">

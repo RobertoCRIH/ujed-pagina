@@ -1,7 +1,12 @@
+import ListGroup from 'react-bootstrap/ListGroup';
+import { FaExternalLinkAlt } from "react-icons/fa";
+
+
 function Enlaces() {
     return(
+        <>
         <div className="enlaces">
-            <div>
+            {/* <div>
                 <h2>Enlaces Universitarios</h2>
 
                 
@@ -34,8 +39,93 @@ function Enlaces() {
                     <li><a className="enlaces__link" href="https://sistemas.ujed.mx/PersonalUJED/">Descarga tu recibo de nómina</a> </li>
                     <li><a className="enlaces__link" href="https://contraloria.ujed.mx/buzon">Buzón de Quejas</a> </li>
                 </ul>
+            </div> */}
+
+            <div>
+                <h3>Enlaces Universtiarios</h3>
+                <ListGroup>
+                    <ListGroup.Item action >
+                        Normativas y Documentos
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action onClick={e=> window.location.href= "https://escolares.ujed.mx/"}>
+                        Dirección de Servicios Escolares
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action onClick={e=> window.location.href = "/"}>
+                        Dirección de Desarrollo y Gestión de Recursos Humanos
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action >
+                        Dirección de Vinclación Institucional
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action >
+                        Radio Universidad
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action >
+                        Observatorio de Violencia Social y de Género
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action >
+                        Armonización Contable
+                    </ListGroup.Item>
+                </ListGroup>
+            </div>
+
+            <div>
+                <h3>Sitios Externos</h3>
+                <ListGroup>
+                    <ListGroup.Item action>
+                        CUMEX
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action>
+                        ANUIES
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action>
+                        INEGI
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action>
+                        Universidad Abierta y a Distancia
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action>
+                        Oferta de Trabajo
+                    </ListGroup.Item>
+                </ListGroup>
+            </div>
+
+            <div>
+                <h3>Portales</h3>
+                <ListGroup >
+                    <ListGroup.Item action>
+                        Portal de Transparencia
+                        
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action>
+                        Contraloría General UJED
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action>
+                        Descarga tu recibo de nómina
+                    </ListGroup.Item>
+
+                    <ListGroup.Item action>
+                        Buzón de Quejas
+                    </ListGroup.Item>
+                </ListGroup>
             </div>
         </div>
+
+
+
+
+        </>
     )
 }
 

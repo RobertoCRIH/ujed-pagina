@@ -1,8 +1,32 @@
+import { useState } from "react"
 import "./style.scss"
 
 import {motion} from 'framer-motion'
 
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+
+
 function GenericSlider({objArray}) {
+
+
+    function GoForward() {
+        if( curState == (objArray.length - 1)){
+            setCurState(0)
+        }else{
+            setCurState(curState+1)
+        }
+    }
+
+    function GoBack() {
+        if( curState == 0 ){
+            setCurState(objArray.length - 1)
+        }else{
+            setCurState(curState - 1)
+        }
+    }
+
+    const [curState, setCurState] = useState(0)
 
     // const objArray = [{
     //     img: "https://imgs.search.brave.com/6Tsizd0_xfEI0nM5SOTpN6MCNoVmSendF5a-dIk2ln0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kZWZp/bmljaW9uLmRlL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDEwLzA4/L2FydGlzdGEtMi5q/cGc",
@@ -16,36 +40,104 @@ function GenericSlider({objArray}) {
     // }
 
 // ]
-    if(objArray){
-    return(
-        <div className="GenericSlider">
+    // if(objArray){
+    // return(
+    //     <div className="GenericSlider">
             
-            <motion.div  
-            className="innerContainer"
-            >
+    //         <div  
+    //         className="innerContainer"
+    //         >
 
-                {objArray.map(i=>{
-                    return(
-                        <div className="item">
-                            <img src={i.img} alt="" />
+    //             {objArray.map(i=>{
+    //                 return(
+    //                     <div className="item">
+    //                         <img src={i.img} alt="" />
 
-                            <div className="text">
-                                <h4> {i.title} </h4>
-                                <p>
-                                    {i.body}
-                                </p>
-                            </div>
+    //                         <div className="text">
+    //                             <h4> {i.title} </h4>
+    //                             <p>
+    //                                 {i.body}
+    //                             </p>
+    //                         </div>
                         
-                        </div>
-                    )
-                })}
+    //                     </div>
+    //                 )
+    //             })}
 
                 
 
-            </motion.div>
+    //         </div>
+
+    //     </div>
+    // )}
+    if(objArray){
+    return( 
+        <div className="sliderII">
+
+            <div className="arrow">
+                <button onClick={e=>{
+                    GoBack()
+                }}>
+                <IoIosArrowBack/>
+                </button>
+            </div>
+
+            
+
+            <div className="sliderII__card" style={{
+                backgroundImage: `url(${objArray[curState].img})`
+            }}>
+
+                <div className="sliderII__card__content">
+                    <h3> {objArray[curState].title} </h3>
+                    <p>
+                        {objArray[curState].body  }
+                    </p>
+
+                    <div className="buttons">
+                        
+                        {objArray.map((e,index)=>{
+                            if(index==curState){
+                                return(
+                                    <button className="selected" onClick={x=>{
+                                        setCurState(index)
+                                    }}>  </button>
+                                )   
+                            }else{
+                                return(
+                                    <button onClick={x=>{
+                                        setCurState(index)
+                                    }}>  </button>
+                                )  
+                            }
+                        })}
+
+                    </div>
+
+                    
+                </div>
+
+                {/* <div className="arrows">
+                    <button> <IoIosArrowBack/> </button>
+                    <button> <IoIosArrowForward/> </button>
+                </div> */}
+
+            </div>
+
+             
+            
+            <div className="arrow">
+                <button onClick={e=>{
+                    GoForward()
+                }}>
+                <IoIosArrowForward/>
+                </button>
+            </div>
+            
 
         </div>
-    )}
+    )
+    }
 }
 
 export default GenericSlider;

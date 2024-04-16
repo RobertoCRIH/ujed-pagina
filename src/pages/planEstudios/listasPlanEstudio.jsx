@@ -29,7 +29,7 @@ function ListaPlanEstudio({listaDB}) {
     function AgregarMateria(idcarrera,nombre,semestre) {
         
 
-        Axios.post("http://localhost:3001/materias/insertar",{
+        Axios.post("http://localhost:3001/admin/materias/insertar",{
             idcarrera: idcarrera,
             nombre: nombre,
             semestre: semestre
@@ -50,7 +50,7 @@ function ListaPlanEstudio({listaDB}) {
     }
 
     function EliminarMateria(id) {
-        Axios.delete("http://localhost:3001/materias/eliminar",{data:{idmateria:id}})
+        Axios.delete("http://localhost:3001/admin/materias/eliminar",{data:{idmateria:id}})
         setMaterias(materias.filter(x=>x.idmateria!==id))
     }
 

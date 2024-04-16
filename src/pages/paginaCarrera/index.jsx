@@ -42,6 +42,7 @@ import predeterminado from "./../../assets/images/ujed banner.jpg"
 import Duracion from "./duracion.jsx";
 import Inscripciones from "./inscripciones.jsx";
 import PlanEstudios from "./planEstudios.jsx";
+import GenericBanner from "../../components/genericBanner/index.jsx";
 
 
 
@@ -210,11 +211,11 @@ function PaginaCarrera() {
             
             
 
-            <CarreraHero 
-            img={setBanner(carrera[0].area)}
-            title={carrera[0].nombre}
-            lugar={carrera[0].ciudad}
-            />
+            
+
+            <GenericBanner img={setBanner(carrera[0].area)}> 
+                {carrera[0].nombre}
+            </GenericBanner>
 
             
             
@@ -236,7 +237,6 @@ function PaginaCarrera() {
                     {carrera[0].metas}
                 </CarreraSecciones>
 
-                <Duracion numero={carrera[0].duracion}/>
 
                 <PlanEstudios semestres={carrera[0].duracion} idcarrera={carrera[0].idcarrera}/>
 

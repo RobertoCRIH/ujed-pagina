@@ -10,11 +10,18 @@
     align-items: center;
 }
 
-.modal{
+.Mymodal{
     background-color: white;
     width: clamp(300px,90%,600px);
     padding: 15px;
     border-radius: 15px;
+}
+
+.modal{
+    // background-color: white;
+    // width: clamp(300px,90%,600px);
+    // padding: 15px;
+    // border-radius: 15px;
 
     &__header{
         font-weight: bold;

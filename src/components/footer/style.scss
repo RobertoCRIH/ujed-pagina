@@ -1,3 +1,6 @@
+$mainRed: #b11830; 
+
+
 .mainFooter{
     & .section1{
         background-color: #343B41;
@@ -12,24 +15,22 @@
                 color: white;
                 font-size: 20px;
                 font-weight: bold;
-                font-family: serif;
             }
         }
 
         & a{
-            font-family: serif;
             color: white;
+            text-decoration: none;
         }
     }
 
     & .section2{
-        background-color: #B31312;
+        background-color: $mainRed;
         display: flex;
         justify-content: center;
         padding: 20px 0;
         & img{
-            height: 100px;
-            width: 100px;
+            height: 70px;
             object-fit: cover;
             
         }

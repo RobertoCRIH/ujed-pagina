@@ -4,6 +4,7 @@ import "./style.scss";
 
 import { IoIosArrowDown } from "react-icons/io";
 
+
 import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
@@ -26,13 +27,13 @@ function MainNav() {
             </div>
 
             <div className={"content "+(mobileVisible ? "visible" : "hidden")}>
-                <div className="content__one">
+                {/* <div className="content__one">
                     <Link className="options" to={{pathname:"/"}}>Noticias</Link>
                     <Link className="options" to={{pathname:"/"}}>Galeria</Link>
                     <a className="options" href="https://escolares.ujed.mx">Control Escolar</a>
                     <Link className="options" to={{pathname:"/login"}}>Administrador</Link>
                     
-                </div>
+                </div> */}
                 <div className="content__two">
 
                     <div className="dropDown">
@@ -91,6 +92,8 @@ function MainNav() {
                                 <a href="http://extension.ujed.mx" className="link">Extensión Universitaria</a> <br />
                                 <Link className="link" to={{pathname:"/direccion-general-de-bibliotecas"}}>Dirección General de Bibliotecas</Link> <br /> 
                                 <Link className="link" to={{pathname:"/recursos-humanos"}}>Dirección de Desarrollo y Gestión de Recursos Humanos</Link> <br /> 
+                                <Link className="link" to={{pathname:"/coordinacion-de-capacitacion-institucional"}}>Coordinación de Capacitación Institucional</Link> <br /> 
+                                <Link className="link" to={{pathname:"/correo-institucional"}}>Correo Institucional</Link> <br /> 
 
                             </div>
                             <div className="col">
@@ -105,7 +108,8 @@ function MainNav() {
                             </div>
                             <div className="col">
                                 <div className="title">COMUNICACIÓN</div>
-                                {/* <Link className="link">Comunicación Social</Link> <br /> */}
+                                <Link className="link" to={{pathname:"/comunicacion-social"}}>Comunicación Social</Link> <br />
+                                <a className="link" href="https://radio.ujed.mx/">Radio UJED</a><br />
                                 <a className="link" href="http://tv.ujed.mx/">TV UJED</a><br />
                                 {/* <Link className="link">Publicaciones</Link> */}
                             </div>
@@ -120,16 +124,18 @@ function MainNav() {
                             <div className="col">
                                 <div className="title">LA UNIVERSIDAD</div>
                                 <Link className="link" to={{pathname:"/sobre-la-universidad"}}>Sobre Nosotros</Link> <br />
-                                {/* <Link className="link">Rectoría</Link>
-                                <Link className="link">Identidad Institucional</Link> <br /> 
-                                <Link className="link">Historia</Link> */}
+                                <Link className="link">Noticias</Link> <br />
+                                <Link className="link">Galeria</Link> <br /> 
+                                {/* <Link className="link">Historia</Link> */}
 
                             </div>
                             <div className="col">
                                 <div className="title">INFORMACIÓN</div>
-                                <Link className="link">Normativa y Documentos</Link> <br />
-                                <a href="http://transparencia.ujed.mx" className="link">Portal de Transparencia</a>
-                                
+                                <Link className="link">Normativa y Documentos (FALTA)</Link> <br />
+                                <a href="http://transparencia.ujed.mx" className="link">Portal de Transparencia</a> <br />
+                                <a href="http://transparencia.ujed.mx/directorio" className="link">Directorio Institucional</a> <br />
+                                <a href="https://contraloria.ujed.mx/" className="link">Contraloría Social</a> <br />
+                                <Link className="link" to={{pathname: "/sistema-integral-de-gestión-de-calidad"}}>Sistema Integral de Gestión de Calidad</Link> <br />
                                 
                             </div>
                             <div className="col">
@@ -137,6 +143,28 @@ function MainNav() {
                                 <Link className="link">Igualdad de Género en la UJED</Link> <br />
                             </div>
                         </div>
+                    </div>
+
+
+                    <div className="dropDown">
+
+                        <div className="activator">
+                            <Link to={{pathname: "/login"} } style={{
+                                textDecoration: "none"
+                            }}>Administración</Link> 
+                        </div>
+
+                    </div>
+
+                    <div className="dropDown">
+
+                        <div className="activator">
+                            <a href="https://escolares.ujed.mx/" style={{
+                                textDecoration: "none"
+                            }}>Control Escolar 
+                            </a> 
+                        </div>
+
                     </div>
 
                 </div>

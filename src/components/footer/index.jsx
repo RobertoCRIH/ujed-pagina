@@ -1,5 +1,5 @@
 import "./style.scss";
-import logo from "../../assets/images/logo4.png"
+import logo from "../../assets/images/logo blanco.jpg"
 function Footer() {
     return(
         <div className="mainFooter">

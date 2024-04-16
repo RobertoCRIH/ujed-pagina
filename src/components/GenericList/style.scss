@@ -1,0 +1,21 @@
+$mainRed: #b11830; 
+
+.genericList{
+    margin: 0 10%;
+
+    & h2{
+        color: $mainRed;
+        font-weight: bold;
+        font-size: 30px;
+        padding: 10px 0;
+    }
+
+    & ol{
+        font-size: 16px;
+        color: rgb(46, 46, 46);
+
+        & li{
+            padding: 5px 0;
+        }
+    };
+}

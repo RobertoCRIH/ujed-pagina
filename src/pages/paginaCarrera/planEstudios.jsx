@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-import {motion} from 'framer-motion';
+import Accordion from 'react-bootstrap/Accordion';
+
 
 import Axios from 'axios';
 
@@ -33,54 +34,35 @@ function PlanEstudios({semestres,idcarrera}) {
         
         return( 
 
-
             <div className="planEstudios">
-                <h2>Plan de Estudios</h2>
 
-                <div className="planEstudios__buttons">
+                <h3>Plan de Estudio</h3>
 
-                    {semestresLista.map(s=>{
-                        if(s===semestre){
-                            return(
-                                <motion.button className="selected"
-                                whileHover={{
-                                    scale:1.1
-                                }}
-                                > {s} </motion.button> 
-                            )
-                        }else{
-                            return(
-                                <motion.button
-                                whileHover={{
-                                    scale:1.1
-                                }}
-                                onClick={e=>{
-                                    setSemestre(s)
-                                }}
-                                >
-                                    {s} 
-                                </motion.button> 
-                            )
-                        }
+                <Accordion defaultActiveKey={0} >
+                    
+                    {semestresLista.map(e=>{
+                        return(
+                            <Accordion.Item eventKey={e}> 
+                                <Accordion.Header>
+                                    Semestre {e}
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                    {materias.map(x=>{
+                                        if(x.idcarrera === idcarrera){
+                                            if(x.semestre == e){
+                                                return(
+                                                    <li> {x.nombre} </li>
+                                                )
+                                            }
+                                        }
+                                    })}
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        )  
                     })}
 
-                </div>
+                </Accordion>
 
-                <div 
-                className="planEstudios__lista"
-                >
-
-                    {materias.map(m=>{
-                        if(m.semestre == semestre){
-                            if(m.idcarrera == idcarrera){
-                                return(
-                                    <div className="item"> ■ {m.nombre}   </div>
-                                )
-                            }
-                        }
-                    })}
-
-                </div>
             </div>
 
         )

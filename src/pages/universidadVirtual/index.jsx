@@ -1,5 +1,5 @@
 import GenericBanner from "../../components/genericBanner";
-import bannerImg from '../../assets/images/universidad virtual.jpg'
+import bannerImg from '../../assets/images/classroom.jpg'
 import MainNav from "../../components/mainNav";
 import GenericSection from "../../components/genericSection";
 import Footer from "../../components/footer";

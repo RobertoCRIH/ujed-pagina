@@ -7,22 +7,22 @@ $mainRed: #B31312;
     & h3{
         color: $mainRed;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 30px;
         padding: 10px 0;
     }
 
     & .text{
-        font-size: 18px;
-        font-weight: bold;
+        font-size: 16px;
         color: rgb(46, 46, 46);
 
         white-space: pre-line;
 
         & .subtitle{
             color: $mainRed;
-            font-size: 23px;
+            font-size: 20px;
             font-weight: bold;
             padding: 5px 0;
+            font-style: italic;
         }
 
         & ul{
@@ -35,12 +35,14 @@ $mainRed: #B31312;
             border-radius: 15px;
             border: none;
             color: white;
-            padding: 5px 25px;
+            padding: 2px 25px;
             font-size: 18px;
 
             margin: 10px 0;
 
             transition: 0.5s;
+
+            border: 1px solid $mainRed;
 
             &:hover{
 

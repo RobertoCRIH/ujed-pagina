@@ -5,20 +5,37 @@ $mainRed : #B31312;
     padding: 0 10%;
 
     display: flex;
-    background-color: #B31312;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
 
+    gap: 20px;
+
+    padding: 15px 0;
+    margin: 0 10%;
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+
     & button{
+        
         cursor: pointer;
         height: 100%;
         // border-radius: 15px;
         padding: 5px 20px;
-        background-color: #B31312;
+        background-color: white;
+
+        
+
+        border-radius: 20px;
 
         border: 2px solid $mainRed;
 
         font-size: 16px;
-        color: white;
+        color: $mainRed;
+
+        &:hover{
+            background-color: $mainRed;
+            color: white;
+        }
     }
 }

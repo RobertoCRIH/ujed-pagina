@@ -5,6 +5,8 @@ import BannerImg from '../../assets/images/artista.jpg'
 import GenericSection from "../../components/genericSection";
 import GenericSlider from "../../components/genericSlider";
 import Footer from "../../components/footer";
+import GenericList from "../../components/GenericList";
+import DatosArea from "../../components/datosArea";
 
 
 
@@ -45,6 +47,15 @@ function BellasArtes() {
                     body: "Impulsar proyectos de investigación, rescate, promoción y difusión del patrimonio cultural, así como la capacitación a nivel superior de maestros, alumnos y egresados de las escuelas de arte, o la vinculación con otros centros y Universidades del país para la formación de las comunidades académicas relacionadas con las artes, además de ofrecer a la ciudadanía y a los visitantes un espacio que refleje la cultura duranguense y en el que se promueva el disfrute de las actividades artísticas generadas por los propios universitarios y aquéllos externos a ella que puedan contribuir al conocimiento y reconocimiento de nuestros valores de identidad.                    "
                 }
             ]}/>
+
+            <GenericList title={"Objetivos Generales"  } list={[
+                "Crear un centro de información y orientación relativa al desarrollo del arte y la cultura en la entidad.",
+                "Brindar cursos de capacitación a promotores, docentes, alumnos, artistas y creadores en temas relacionados con el desarrollo artístico y cultural.",
+                "Impulsar proyectos para financiar temas de investigación, rescate, preservación y difusión del patrimonio artístico y cultural de nuestra entidad.",
+                "Ofrecer un espacio que brinde a los visitantes locales y foráneos la oportunidad de conocer nuestro patrimonio artístico y cultural.",
+                "Coadyuvar en la formación de profesionales de las artes por medio de impartición de cursos, diplomados, seminario, talleres, congresos, conferencias etc."
+            ]}/>
+
 
 
             <GenericSection title={"Dirección"}>

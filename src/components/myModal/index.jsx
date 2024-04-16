@@ -7,7 +7,7 @@ function MyModal({header,closeHandle,visible,children}) {
     if(visible){
     return(
         <div className="background">
-            <div className="modal">
+            <div className="Mymodal">
                 <div className="modal__header">
                     {header}
                     <motion.button whileHover={{scale:1.1}} onClick={closeHandle}>
