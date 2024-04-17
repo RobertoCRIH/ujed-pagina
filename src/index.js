@@ -39,6 +39,8 @@ import CapacitacionInstitucional from './pages/capacitacion';
 import CorreoInstitucional from './pages/correoInstitucional';
 import ComunicacionSocial from './pages/comunicacionSocial';
 import ControlCalidad from './pages/controlCalidad';
+import IgualdadGenero from './pages/igualdadGenero';
+import VinculacionInstitucional from './pages/vinculacionInstitucional';
 
 
 //Route Elements
@@ -167,6 +169,14 @@ const router = createBrowserRouter([
   {
     path: "/sistema-integral-de-gestión-de-calidad",
     element: <ControlCalidad/>
+  },
+  {
+    path: "/igualdad-de-genero",
+    element: <IgualdadGenero/>
+  },
+  {
+    path: "/vinculacion-institucional",
+    element: <VinculacionInstitucional/>
   }
 ])
 

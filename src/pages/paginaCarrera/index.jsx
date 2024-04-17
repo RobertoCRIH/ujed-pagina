@@ -62,10 +62,11 @@ function PaginaCarrera() {
         Axios.post('http://localhost:3001/carreras/obtener1',{
             idcarrera: id
         }).then((response)=>{
+            console.log(response.data)
             setCarrera(response.data);
             setIsLoading(false);
           
-        })
+        }).catch(err=>console.log(err))
       },[])
 
     function setIcon(area) {

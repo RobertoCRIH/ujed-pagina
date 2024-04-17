@@ -140,7 +140,7 @@ function MainNav() {
                             </div>
                             <div className="col">
                                 <div className="title">PROGRAMAS INSTITUCIONALES</div>
-                                <Link className="link">Igualdad de Género en la UJED</Link> <br />
+                                <Link className="link" to={{pathname: "/igualdad-de-genero"}}>Igualdad de Género en la UJED</Link> <br />
                             </div>
                         </div>
                     </div>
