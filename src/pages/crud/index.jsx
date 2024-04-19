@@ -13,7 +13,8 @@ const crudStates= [
     "Carreras",
     "Noticias",
     "Admins",
-    "Plan de Estudios",
+    
+    "Galería"
 ]
 
 

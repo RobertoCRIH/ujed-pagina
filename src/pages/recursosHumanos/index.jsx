@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BannerImg from "../../assets/images/ujed banner.jpg"
+import BannerImg from "../../assets/images/banner.jpg"
 import GenericBanner from "../../components/genericBanner";
 import GenericSection from "../../components/genericSection";
 

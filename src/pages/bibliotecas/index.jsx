@@ -1,4 +1,4 @@
-import BannerImg from '../../assets/images/ujed banner.jpg'
+import BannerImg from '../../assets/images/banner.jpg'
 import Slide1 from '../../assets/images/classroom.jpg';
 import Slide2 from '../../assets/images/carreras.jpg'
 import Slide3 from '../../assets/images/arquitecto.jpg'

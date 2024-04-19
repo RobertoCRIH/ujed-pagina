@@ -37,6 +37,8 @@ function CrudNav({changeFunction}) {
                         <button onClick={(e)=> {changeFunction("Carreras")}}> <FaBook style={{marginRight:"20px"}}/> Carreras</button>
                         <button onClick={(e)=> {changeFunction("Noticias")}}> <FaNewspaper style={{marginRight:"20px"}}/> Noticias</button>
                         <button onClick={(e)=> {changeFunction("Admins")}}> <FaUserGear style={{marginRight:"20px"}}/> Admins</button>
+                        <button onClick={(e)=> {changeFunction("Galería")}}> <FaUserGear style={{marginRight:"20px"}}/> Galería</button>
+
                     </div>
                     
                 </div>

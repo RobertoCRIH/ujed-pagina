@@ -1,6 +1,7 @@
 import Admins from "./admins";
 import Alumnos from "./alumnos";
 import Carreras from "./carreras";
+import Galeria from "./galeria";
 import Maestros from "./maestros";
 import Noticias from "./noticias";
 
@@ -37,7 +38,16 @@ function CrudBody({state,stateList}) {
                     <Admins/>
                 )
                 break
+
+            case stateList[5]:
+                return(
+                    <>
+                        <Galeria/>
+                    </>
+                )
+                break;
             default:
+                return(<><h1>error</h1></>)
                 break;
         }
     }

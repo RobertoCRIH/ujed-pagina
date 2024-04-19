@@ -41,6 +41,8 @@ import ComunicacionSocial from './pages/comunicacionSocial';
 import ControlCalidad from './pages/controlCalidad';
 import IgualdadGenero from './pages/igualdadGenero';
 import VinculacionInstitucional from './pages/vinculacionInstitucional';
+import Aspirtantes from './pages/aspirantes';
+import EditarNoticia from './pages/editarNotcia';
 
 
 //Route Elements
@@ -177,6 +179,14 @@ const router = createBrowserRouter([
   {
     path: "/vinculacion-institucional",
     element: <VinculacionInstitucional/>
+  },
+  {
+    path: "/aspirantes",
+    element: <Aspirtantes/>
+  },
+  {
+    path: "/subir-noticia/:id",
+    element: <EditarNoticia/>
   }
 ])
 

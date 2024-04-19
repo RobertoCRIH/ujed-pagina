@@ -1,0 +1,69 @@
+.editar_noticia{
+    display: flex;
+    &__img{
+        width: 300px;
+        padding: 30px;
+
+        & img{
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border: 1px solid rgb(131, 131, 131);
+        }
+
+        & p{
+            font-size: 20px;
+        }
+
+        & .imgPicker{
+            background-color: rgb(31, 35, 56);
+            padding: 10px;
+            
+
+            & button{
+
+                margin-bottom: 20px;
+                & img{
+                    width: 200px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    &__form{
+        flex-grow: 1;
+        margin: 30px 10px;
+        box-shadow: 0px 0px 7px 1px rgba(107,107,107,0.75);
+        -webkit-box-shadow: 0px 0px 7px 1px rgba(107,107,107,0.75);
+        -moz-box-shadow: 0px 0px 7px 1px rgba(107,107,107,0.75);        padding: 20px;
+
+        & .tag{
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+
+            & .contador{
+                color: white;
+                font-size: 14px;
+                background-color: grey;
+                padding: 3px 10px;
+                border-radius: 10px;
+            }
+        }
+
+        & input{
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        & textarea{
+            width: 100%;
+            resize: none;
+            padding: 10px;
+        }
+    }
+}

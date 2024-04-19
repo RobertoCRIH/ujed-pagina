@@ -94,12 +94,13 @@ function MainNav() {
                                 <Link className="link" to={{pathname:"/recursos-humanos"}}>Dirección de Desarrollo y Gestión de Recursos Humanos</Link> <br /> 
                                 <Link className="link" to={{pathname:"/coordinacion-de-capacitacion-institucional"}}>Coordinación de Capacitación Institucional</Link> <br /> 
                                 <Link className="link" to={{pathname:"/correo-institucional"}}>Correo Institucional</Link> <br /> 
+                                <Link className="link" to={{pathname:"/aspirantes"}}>Aspirantes</Link> <br /> 
 
                             </div>
                             <div className="col">
                                 <div className="title">SERVICIOS A LA COMUNIDAD</div>
                                 <Link className="link" to={{pathname:"/centro-de-negocios"}}>Centro de Negocios</Link> <br />
-                                {/* <Link className="link">Servicios ofrecidos por cada unidad</Link> <br />  */}
+                                <Link className="link" to={{pathname:"/vinculacion-institucional"}}>Dirección de Vinculación Institucional</Link> <br /> 
                             </div>
                             <div className="col">
                                 <div className="title">CULTURA Y DEPORTE</div>

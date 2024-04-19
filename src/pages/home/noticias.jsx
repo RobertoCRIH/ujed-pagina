@@ -1,6 +1,20 @@
+import { useState , useEffect } from "react";
+import Axios from 'axios'
 import Noticia from "./noticia";
+import FormatDate from "../../functions/FormatDate";
 
 function Noticias() {
+
+    const [noticias,setNoticias] = useState([])
+
+    useEffect(()=>{
+        Axios.get("http://localhost:3001/noticias/obtenertodas")
+        .then(response =>{ 
+            setNoticias(response.data)
+            console.log(response.data)
+        })
+    },[])
+
     return(
         <div className="homeNoticias">
             <div className="homeNoticias__title">
@@ -8,12 +22,14 @@ function Noticias() {
             </div>
 
             <div className="homeNoticias__content">
-                <Noticia/>
 
-                <Noticia/>
+                {noticias.map(e=>{
+                    return(
+                        <Noticia title={e.titulo} date={ FormatDate(e.fechapub) }/>
+                    )
+                })}
 
-                <Noticia/>
-                <Noticia/>
+                
 
                 
             </div>

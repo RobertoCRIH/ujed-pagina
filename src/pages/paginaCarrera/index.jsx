@@ -38,7 +38,7 @@ import salud from "../../assets/images/salud.jpg";
 import arte from "../../assets/images/artista.jpg";
 import arqui from "./../../assets/images/arquitecto.jpg";
 import veterinario from "../../assets/images/veterinario.jpg";
-import predeterminado from "./../../assets/images/ujed banner.jpg"
+import predeterminado from "./../../assets/images/ujedbanner.jpg"
 import Duracion from "./duracion.jsx";
 import Inscripciones from "./inscripciones.jsx";
 import PlanEstudios from "./planEstudios.jsx";
