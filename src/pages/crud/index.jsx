@@ -14,7 +14,8 @@ const crudStates= [
     "Noticias",
     "Admins",
     
-    "Galería"
+    "Galería",
+    "Escuelas"
 ]
 
 

@@ -8,6 +8,8 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
 import { FaNewspaper } from "react-icons/fa6";
 import { FaUserGear } from "react-icons/fa6";
+import { FaSchool } from "react-icons/fa";
+
 
 
 
@@ -38,6 +40,7 @@ function CrudNav({changeFunction}) {
                         <button onClick={(e)=> {changeFunction("Noticias")}}> <FaNewspaper style={{marginRight:"20px"}}/> Noticias</button>
                         <button onClick={(e)=> {changeFunction("Admins")}}> <FaUserGear style={{marginRight:"20px"}}/> Admins</button>
                         <button onClick={(e)=> {changeFunction("Galería")}}> <FaUserGear style={{marginRight:"20px"}}/> Galería</button>
+                        <button onClick={(e)=> {changeFunction("Escuelas")}}> <FaSchool style={{marginRight:"20px"}}/> Escuelas</button>
 
                     </div>
                     

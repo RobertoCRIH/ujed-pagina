@@ -43,6 +43,7 @@ import IgualdadGenero from './pages/igualdadGenero';
 import VinculacionInstitucional from './pages/vinculacionInstitucional';
 import Aspirtantes from './pages/aspirantes';
 import EditarNoticia from './pages/editarNotcia';
+import TestRegister from './components/testRegister';
 
 
 //Route Elements
@@ -187,6 +188,10 @@ const router = createBrowserRouter([
   {
     path: "/subir-noticia/:id",
     element: <EditarNoticia/>
+  },
+  {
+    path: "/test-register",
+    element: <TestRegister/>
   }
 ])
 

@@ -1,37 +1,10 @@
 .editar_noticia{
     display: flex;
-    &__img{
-        width: 300px;
-        padding: 30px;
-
-        & img{
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            border: 1px solid rgb(131, 131, 131);
-        }
-
-        & p{
-            font-size: 20px;
-        }
-
-        & .imgPicker{
-            background-color: rgb(31, 35, 56);
-            padding: 10px;
-            
-
-            & button{
-
-                margin-bottom: 20px;
-                & img{
-                    width: 200px;
-                    object-fit: contain;
-                }
-            }
-        }
-    }
+    padding: 0 10%;
+    
 
     &__form{
+        background-color: white;
         flex-grow: 1;
         margin: 30px 10px;
         box-shadow: 0px 0px 7px 1px rgba(107,107,107,0.75);
@@ -52,6 +25,28 @@
                 background-color: grey;
                 padding: 3px 10px;
                 border-radius: 10px;
+            }
+        }
+
+        & .imagePicker{
+            display: flex;
+            overflow-x: scroll;
+            width: 850px;
+            padding: 10px 20px;
+            gap: 20px;
+
+            border: 1px solid grey;
+
+            & button{
+                flex-shrink: 0;
+                width: 300px;
+                height: 300px;
+
+                & img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
             }
         }
 

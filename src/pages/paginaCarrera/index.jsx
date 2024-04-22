@@ -33,7 +33,7 @@ import forestal from "./../../assets/images/ing-agropecuario.jpg";
 import cienciasBasicas from "./../../assets/images/cienciasbasicas.jpg";
 import cienciasEnomico from "./../../assets/images/economico administrativo.jpg";
 import quimicoBiologo from "./../../assets/images/quimico.jpg";
-import cienciasSociales from "./../../assets/images/ciencias sociales.jpg";
+import cienciasSociales from "./../../assets/images/ciencias-sociales.jpg";
 import salud from "../../assets/images/salud.jpg";
 import arte from "../../assets/images/artista.jpg";
 import arqui from "./../../assets/images/arquitecto.jpg";

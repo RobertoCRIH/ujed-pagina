@@ -15,54 +15,88 @@ function Noticias() {
 
     useEffect(()=>{
         Axios.get("http://localhost:3001/noticias/obtenertodas")
-        .then(response => setNoticias(response.data))
+        .then(response => setNoticias(response.data.reverse()))
+        .catch(err=>console.log(err))
     },[])
 
-    //Variables para agregar/editar
+    const [imagenes,setImagenes] = useState([]);
+    useEffect(()=>{
+        Axios.get("http://localhost:3001/imagenes/getallimages")
+        .then(response => {
+            setImagenes(response.data.reverse())
+            console.log(imagenes.data)
+        })
+        .catch(err => console.log(err.data))
+    },[])
 
-    const [titulo,setTitulo] = useState("");
-    const [descCorta,setDescCorta] = useState("Descripsión corta diferente de la noticia");
-    const [desc,setDesc] = useState("El cuerpo de la noticia diferente" );
+    //Conseguir las imagenes agregadas a noticia
+
+
+    
+
+    //Función para agregar una imagen a una noticia.
+    const [editId,setEditId] = useState() //Esta es la variable para que se guarde la id del wur se va a editar
+
+    function AgregarImagen(id) {
+        Axios.post("http://localhost:3001/admin/relnotis/asignarfoto",{
+            idimagen : id,
+            idnoticia : editId
+        })
+        .then(res=>{
+            window.alert("Se agregó la imagen")
+        })
+        .catch(err=>{
+            window.alert("Ésta imagen ya había sido agregada.")
+        })
+    }
+    
 
     // Controladores para el modal para agregar
     const [addModal,setAddModal] = useState(false)
+    const [addId,setAddId] = useState([{
+        url: ""
+    }])
 
-    function AgregarNoticia() {
-        if(titulo){
-            if(desc){
-                Axios.post("http://localhost:3001/admin/noticias/insertar",{
-                    titulo: titulo,
-                    descorta: descCorta,
-                    descripcion: desc
-                }).then(response => {
-                    console.log(response)
-                    setAddModal(false)
-                    navigation("/subir-noticia/"+response.data.idnuevo)
-
-                }).catch(err=>{
-                    console.log(err)
-                })
-            }else{
-                window.alert("No fue escrito el cuerpo de la noticia.")
-            }
-        }else{
-            window.alert("El título no fue escrito")
-        }
-        
-    }
+    
     return(
         <>  
 
             {/* Modales  */}
 
             {/* Modal para poder agregar noticias   */}
-            <MyModal header={"Agregar una noticia"} visible={addModal} closeHandle={e=>setAddModal(false)}>
+            <MyModal header={"Agregar imagenes " + addId } visible={addModal} closeHandle={e=>setAddModal(false)}>
                 <div className="modal__content">
-                    <div className="subtitle">
-                        Crea una noticia
-                    </div>
-                    <div className="input">
-                        <input type="text" placeholder="Ej. Título Noticia" onChange={e=>setTitulo(e.target.value)}/>
+                    
+
+                    <div>
+                        {imagenes.map(i=>{
+                            return(
+                                <div style={{
+                                    display: "flex",
+                                    alignItems:"center",
+                                    gap: "10px",
+                                    margin: "20px 10px"
+                                }}>
+
+                                    <img style={{
+                                        height:"100px",
+                                        aspectRatio:"2/1",
+                                        objectFit:"cover"
+                                    }} src={ "http://localhost:3001/uploads/"+i.url } alt="" />
+
+                                    <p> {i.url} </p>
+
+                                    <button style={{
+                                        padding:"5px 10px",
+                                        borderRadius:"15px"
+                                    }}
+                                    onClick={e=>{
+                                        AgregarImagen(i.idimagen)
+                                    }}
+                                    >Añadir</button>
+                                </div>
+                            )
+                        })}
                     </div>
 
                     
@@ -71,7 +105,7 @@ function Noticias() {
                 </div>
                 <div className="modal__footer">
                     <div className="buttons">
-                        <button onClick={e=>AgregarNoticia()}>Publicar Noticia</button>
+                        <button >Publicar Noticia</button>
                     </div>
                 </div>
             </MyModal>
@@ -90,7 +124,12 @@ function Noticias() {
                 {noticias.map(x=>{
                     return(
                         <NoticiaItem    title={x.titulo}
-                                        imgLink={"https://www.forbes.com/advisor/wp-content/uploads/2023/10/image4-Cropped.jpg"}
+                                        id={x.idnoticia}
+                                        functionImg={e=>{
+                                            setAddModal(true);
+                                            setAddId(x.idnoticia);
+                                            setEditId(x.idnoticia)
+                                        }}
                                         fecha={ format(new Date(x.fechapub), 'dd/MM/yyyy' ) }/>
                     )
                 })}

@@ -15,6 +15,16 @@ function Noticias() {
         })
     },[])
 
+    function TheFourCards() {
+        for (let index = 1; index < 4; index++) {
+            return(
+                <Noticia title={ noticias[index].titulo }
+                        date={ FormatDate( noticias[index].fechapub )}
+                />
+            )
+            
+        }
+    }
     return(
         <div className="homeNoticias">
             <div className="homeNoticias__title">
@@ -23,10 +33,14 @@ function Noticias() {
 
             <div className="homeNoticias__content">
 
-                {noticias.map(e=>{
+                {/* {TheFourCards()} */}
+
+                {noticias.map((e,index)=>{
+                    if(index < 4){
                     return(
                         <Noticia title={e.titulo} date={ FormatDate(e.fechapub) }/>
                     )
+                    }
                 })}
 
                 

@@ -3,6 +3,10 @@ import GenericSection from "../../components/genericSection";
 import MainNav from "../../components/mainNav";
 import Footer from "../../components/footer";
 
+import Slide1 from "../../assets/images/ceneval.jpg"
+import Slide2 from "../../assets/images/idiomas.jpg"
+import Slide3 from "../../assets/images/ciencias-sociales.jpg"
+
 
 import BannerImg from '../../assets/images/banner.jpg'
 import GenericSlider from "../../components/genericSlider";
@@ -23,17 +27,17 @@ function CienciasSociales() {
 
             <GenericSlider objArray={[
                 {
-                    img: "https://www.sydle.com/blog/assets/post/profesor-y-alumno-63cb00920e03ef595d762509/professor-e-aluno-capa.png",
+                    img: Slide1,
                     title: "Misión",
                     body: "El Instituto de Ciencias Sociales es una institución pública que contribuye al desarrollo del conocimiento social y humanístico a través de la investigación; mediante sus procesos de investigación y formación docente promueve en los sujetos una mayor comprensión de los fenómenos sociales y sus efectos, privilegia la formación intelectual, una mentalidad libre y responsable fortaleciendo así la identidad universitaria, y su papel en la sociedad duranguense y del país en su conjunto.                    "
                 },
                 {
-                    img: "https://reddesalud.net/web/121728f/1111consulta-de-psicologia.webp",
+                    img: Slide2,
                     title: "Visión",
                     body: "El Instituto de Ciencias Sociales de la UJED consolidará sus líneas de investigación social y humanística, cumpliendo con los estándares nacionales y con reconocimiento nacional e internacional.                    "
                 },
                 {
-                    img: "https://cdn.euroinnova.edu.es/img/subidasEditor/copia%20de%20disen%CC%83o%20sin%20ti%CC%81tulo%20(65)-1621339032.webp",
+                    img: Slide3,
                     title: "Objetivos",
                     body:"Realizar investigación enfocada en las ciencias sociales y las humanidades. \nProducir conocimiento producto de los investigadores de nuestro Instituto.\nDifundir el conocimiento producto de las investigaciones surgidas en el Instituto, así como de los paradigmas más importantes en las ciencias sociales y las humanidades.\nPromover planes de estudios de posgrado en las áreas de las ciencias sociales y humanidades.\nFomentar cuerpos colegiados y proyectos de investigación en los campos de trabajo del Instituto."
                 }

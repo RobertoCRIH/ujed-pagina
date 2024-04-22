@@ -7,22 +7,19 @@ import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 import  Axios  from 'axios';
 
-function CarrerasItem({object}) {
 
-    const [nombre,setNombre] = useState(object.nombre);
-    const [duracion,setDuracion] = useState(object.duracion);
-    const [descripcion,setDescripcion] = useState(object.descripcion);
-    const [objetivos,setObjetivos] = useState(object.objetivos);
-    const [metas,setMetas] = useState(object.metas);
-    const [relprof,setRelprof] = useState(object.relprof);
-    const [empleosasp,setEmpleosasp] = useState(object.empleosasp);
+function CarrerasForm() {
 
-    //Función para poder cambiar entre modo de edición
-    const [editOff,setEditOff] = useState(true)
+    const [nombre,setNombre] = useState("");
+    const [duracion,setDuracion] = useState(1);
+    const [descripcion,setDescripcion] = useState("");
+    const [objetivos,setObjetivos] = useState("");
+    const [metas,setMetas] = useState("");
+    const [relprof,setRelprof] = useState("");
+    const [empleosasp,setEmpleosasp] = useState("");
 
-    function EditarCarrera() {
-        Axios.patch("http://localhost:3001/admin/carreras/actualizar",{
-            idcarrera: object.idcarrera,
+    function InsertarCarrera() {
+        Axios.post("http://localhost:3001/admin/carreras/insertar",{
             nombre: nombre,
             duracion: duracion,
             descripcion: descripcion,
@@ -33,43 +30,27 @@ function CarrerasItem({object}) {
         })
         .then(res=>{
             console.log(res.data)
-            window.alert("Se actualizó la carrera.")
-            setEditOff(true)
-        })
-    }
-
-    function BorrarCarrera() {
-        Axios.delete("http://localhost:3001/admin/carreras/eliminar",{data:{
-            idcarrera: object.idcarrera
-        }})
-        .then(res=>{
-            window.alert("Carrera Eliminada")
-            setErased(true)
+            window.alert("Se ha insertado la nueva carrera.")
         })
         .catch(err=>{
             window.alert("Algo salió mal...")
         })
     }
-
-    const [erased,setErased] = useState(false); 
-
-    if(!erased){
+    
+    
     return(
         <>  
+            <h4>Agregar Carrera</h4>
         
             <Accordion defaultActiveKey={1}>
                 <Accordion.Item eventKey='0'>
                     <Accordion.Header >
-                        {object.nombre}
+                        Agregar Carrera
                     </Accordion.Header>
 
                     <Accordion.Body>
 
                         <Form>
-                            <Form.Group>
-                                <Form.Check  type="switch" label={"Activar Edición"} onChange={e=>setEditOff(!editOff)}/>
-                                <Form.Text>*Marca esta casilla para editar los valores</Form.Text>
-                            </Form.Group>
 
                             <Form.Group>
                                 <Row>
@@ -78,7 +59,7 @@ function CarrerasItem({object}) {
                                         <Form.Label>
                                             Nombre de la carrera
                                         </Form.Label>
-                                        <Form.Control disabled={editOff} defaultValue={nombre} onChange={e=>setNombre(e.target.value)} maxLength={100} placeholder='Ej. Licenciado en Biología'/>
+                                        <Form.Control onChange={e=>setNombre(e.target.value)} maxLength={100} placeholder='Ej. Licenciado en Biología'/>
                                     </Col>
 
                                     <Col>
@@ -86,7 +67,7 @@ function CarrerasItem({object}) {
                                             Duración de la carrera
                                         </Form.Label>
 
-                                        <Form.Control disabled={editOff} defaultValue={duracion} onChange={e=>setDuracion(e.target.value)} type='number' maxLength={40}/>
+                                        <Form.Control onChange={e=>setDuracion(e.target.value)} type='number' maxLength={40}/>
                                     
                                     </Col>
 
@@ -100,7 +81,7 @@ function CarrerasItem({object}) {
                                     Descripción
                                 </Form.Label>
 
-                                <Form.Control disabled={editOff} defaultValue={descripcion} onChange={e=>setDescripcion(e.target.value)} as={"textarea"} rows={12} maxLength={2999} placeholder='Escribe aquí al descripción de la carrera o una pequeña introducción a ella.'/>
+                                <Form.Control onChange={e=>setDescripcion(e.target.value)} as={"textarea"} rows={12} maxLength={2999} placeholder='Escribe aquí al descripción de la carrera o una pequeña introducción a ella.'/>
                             </Form.Group>
 
                             <Form.Group>
@@ -108,7 +89,7 @@ function CarrerasItem({object}) {
                                     Objetivos 
                                 </Form.Label>
 
-                                <Form.Control disabled={editOff} defaultValue={objetivos} onChange={e=>setObjetivos(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
+                                <Form.Control onChange={e=>setObjetivos(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
 
                                 <Form.Text>
                                     *El formato con que escribas este apartado será el mismo que se mostrará en la página web.
@@ -120,7 +101,7 @@ function CarrerasItem({object}) {
                                     Metas 
                                 </Form.Label>
 
-                                <Form.Control disabled={editOff} defaultValue={metas} onChange={e=>setMetas(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
+                                <Form.Control onChange={e=>setMetas(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
 
                                 <Form.Text>
                                     *El formato con que escribas este apartado será el mismo que se mostrará en la página web.
@@ -132,7 +113,7 @@ function CarrerasItem({object}) {
                                     Relación Profesional 
                                 </Form.Label>
 
-                                <Form.Control disabled={editOff} defaultValue={relprof} onChange={e=>setRelprof(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
+                                <Form.Control onChange={e=>setRelprof(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
 
                                 <Form.Text>
                                     *El formato con que escribas este apartado será el mismo que se mostrará en la página web.
@@ -144,24 +125,15 @@ function CarrerasItem({object}) {
                                     Campo de Trabajo 
                                 </Form.Label>
 
-                                <Form.Control disabled={editOff} defaultValue={empleosasp} onChange={e=>setEmpleosasp(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
+                                <Form.Control onChange={e=>setEmpleosasp(e.target.value)} as={"textarea"} rows={6} maxLength={800} />
 
                                 <Form.Text>
                                     *El formato con que escribas este apartado será el mismo que se mostrará en la página web.
                                 </Form.Text>
                             </Form.Group>
 
-                            <br />
+                            <Button onClick={e=>InsertarCarrera()}>Agregar Carrera</Button>
 
-
-                            <Row>
-                                <Col>
-                                    <Button variant='success' onClick={e=>EditarCarrera()}>Editar Carrera</Button>
-                                </Col>
-                                <Col>
-                                    <Button variant='danger' onClick={e=>BorrarCarrera()}>Eliminar Carrera</Button>
-                                </Col>
-                            </Row>
                         </Form>
 
                     </Accordion.Body>
@@ -170,7 +142,6 @@ function CarrerasItem({object}) {
         
         </>
     )
-    }
 }
 
-export default CarrerasItem;
+export default CarrerasForm;

@@ -7,7 +7,7 @@ import Footer from "../../components/footer";
 import ImgBanner from "../../assets/images/banner.jpg"
 
 import Slide1 from "../../assets/images/classroom.jpg";
-import Slide2 from "../../assets/images/ciencias sociales.jpg"
+import Slide2 from "../../assets/images/ciencias-sociales.jpg"
 
 import GenericSlider from "../../components/genericSlider";
 import GenericSection from "../../components/genericSection";
